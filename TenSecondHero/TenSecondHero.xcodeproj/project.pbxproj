@@ -77,8 +77,8 @@
 		9861405619EB2B7000AF733A /* TenSecondHero */ = {
 			isa = PBXGroup;
 			children = (
+				9861407919EB2E2D00AF733A /* ViewControllers */,
 				9861405919EB2B7000AF733A /* AppDelegate.swift */,
-				9861405B19EB2B7000AF733A /* ViewController.swift */,
 				9861405D19EB2B7000AF733A /* Main.storyboard */,
 				9861406019EB2B7000AF733A /* Images.xcassets */,
 				9861406219EB2B7000AF733A /* LaunchScreen.xib */,
@@ -110,6 +110,14 @@
 				9861406E19EB2B7000AF733A /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9861407919EB2E2D00AF733A /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				9861405B19EB2B7000AF733A /* ViewController.swift */,
+			);
+			name = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
