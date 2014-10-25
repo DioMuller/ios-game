@@ -3,7 +3,7 @@
 //  TenSecondHeroTests
 //
 //  Created by Diogo Muller on 10/12/14.
-//  Copyright (c) 2014 Old Fat Panda. All rights reserved.
+//  Copyright (c) 2014 Diogo Muller. All rights reserved.
 //
 
 import UIKit

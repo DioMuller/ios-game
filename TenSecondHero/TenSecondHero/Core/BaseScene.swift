@@ -9,5 +9,5 @@
 import SpriteKit
 
 class BaseScene : SKNode {
-    
+
 }
