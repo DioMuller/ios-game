@@ -10,6 +10,7 @@ import SpriteKit
 
 class FlappyHero : SKNode {
     var sprite : SKSpriteNode = SKSpriteNode(imageNamed: "10sechero.png")
+    var sound : SKAction = SKAction.playSoundFileNamed("drop.caf", waitForCompletion: false)
     
     override init() {
         super.init()
@@ -27,5 +28,6 @@ class FlappyHero : SKNode {
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
         self.physicsBody?.velocity = CGVectorMake(0, 0)
         self.physicsBody?.applyImpulse(CGVector(dx: 0.0, dy: 15.0))
+        self.runAction(sound)
     }
 }

@@ -19,8 +19,13 @@ class TitleViewController: UIViewController {
         var error : NSError?
         mediaPlayer = AVAudioPlayer(contentsOfURL: file, error: &error )
         
+        mediaPlayer.numberOfLoops = -1
         mediaPlayer.prepareToPlay()
         mediaPlayer.play()
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        mediaPlayer.stop()
     }
 
     override func didReceiveMemoryWarning() {

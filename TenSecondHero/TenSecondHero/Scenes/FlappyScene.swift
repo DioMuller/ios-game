@@ -10,6 +10,7 @@ import SpriteKit
 
 public class FlappyScene : BaseScene {
     var hero : FlappyHero = FlappyHero()
+    var background : ParallaxBackground = ParallaxBackground()
     
     override init() {
         super.init()        
@@ -23,10 +24,12 @@ public class FlappyScene : BaseScene {
         super.onStartScene()
         hero.position = CGPoint(x: 100, y: 100)
         addChild(hero)
+        
+        background = ParallaxBackground(imageNamed: "background_city01.png", size: self.scene!.size, velocity: 0.1)
+        addChild(background)
     }
     
     public override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
         hero.touchesBegan(touches, withEvent: event)
     }
-    
 }

@@ -27,4 +27,7 @@ public class BaseScene : SKNode {
     public func onStartScene() {
         runAction(musicAction)
     }
+    
+    func update(currentTime: CFTimeInterval) {
+    }
 }

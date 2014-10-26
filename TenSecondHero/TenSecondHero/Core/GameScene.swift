@@ -32,7 +32,4 @@ class GameScene : SKScene {
     
     override func touchesEnded(touches: NSSet, withEvent event: UIEvent) {
     }
-    
-    override func update(currentTime: CFTimeInterval) {
-    }
 }
