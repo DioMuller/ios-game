@@ -13,7 +13,11 @@ public class BaseScene : SKNode {
     
     override public init() {
         super.init()
-        musicAction = SKAction.playSoundFileNamed("WeDontNeedAHero.aifc", waitForCompletion: false)
+        musicAction = SKAction.repeatActionForever(
+            SKAction.sequence([
+                SKAction.playSoundFileNamed("WeDontNeedAHero.aifc", waitForCompletion: true),
+                SKAction.playSoundFileNamed("SaveMe.aifc", waitForCompletion: true)
+        ]))
     }
 
     required public init?(coder aDecoder: NSCoder) {

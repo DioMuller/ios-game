@@ -44,8 +44,8 @@
 		988BC99A19FD070C007EA9B8 /* SaveMe.aifc in Resources */ = {isa = PBXBuildFile; fileRef = 988BC99519FD070C007EA9B8 /* SaveMe.aifc */; };
 		988BC99B19FD070C007EA9B8 /* ScoreTime.aifc in Resources */ = {isa = PBXBuildFile; fileRef = 988BC99619FD070C007EA9B8 /* ScoreTime.aifc */; };
 		988BC99C19FD070C007EA9B8 /* WeDontNeedAHero.aifc in Resources */ = {isa = PBXBuildFile; fileRef = 988BC99719FD070C007EA9B8 /* WeDontNeedAHero.aifc */; };
-		988BC99E19FD0AC9007EA9B8 /* Hero.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988BC99D19FD0AC9007EA9B8 /* Hero.swift */; };
-		98B1EB7F19FC4B3700717B81 /* TestScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B1EB7E19FC4B3700717B81 /* TestScene.swift */; };
+		988BC99E19FD0AC9007EA9B8 /* FlappyHero.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988BC99D19FD0AC9007EA9B8 /* FlappyHero.swift */; };
+		98B1EB7F19FC4B3700717B81 /* FlappyScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B1EB7E19FC4B3700717B81 /* FlappyScene.swift */; };
 		98B1EB8319FC548A00717B81 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B1EB8219FC548A00717B81 /* GameViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -104,8 +104,8 @@
 		988BC99519FD070C007EA9B8 /* SaveMe.aifc */ = {isa = PBXFileReference; lastKnownFileType = file; path = SaveMe.aifc; sourceTree = "<group>"; };
 		988BC99619FD070C007EA9B8 /* ScoreTime.aifc */ = {isa = PBXFileReference; lastKnownFileType = file; path = ScoreTime.aifc; sourceTree = "<group>"; };
 		988BC99719FD070C007EA9B8 /* WeDontNeedAHero.aifc */ = {isa = PBXFileReference; lastKnownFileType = file; path = WeDontNeedAHero.aifc; sourceTree = "<group>"; };
-		988BC99D19FD0AC9007EA9B8 /* Hero.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hero.swift; sourceTree = "<group>"; };
-		98B1EB7E19FC4B3700717B81 /* TestScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestScene.swift; sourceTree = "<group>"; };
+		988BC99D19FD0AC9007EA9B8 /* FlappyHero.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlappyHero.swift; sourceTree = "<group>"; };
+		98B1EB7E19FC4B3700717B81 /* FlappyScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlappyScene.swift; sourceTree = "<group>"; };
 		98B1EB8219FC548A00717B81 /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -130,7 +130,7 @@
 		13ECE18F19FC0C11008052A3 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				98B1EB7E19FC4B3700717B81 /* TestScene.swift */,
+				98B1EB7E19FC4B3700717B81 /* FlappyScene.swift */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -278,7 +278,7 @@
 		98B1EB8019FC4EE500717B81 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
-				988BC99D19FD0AC9007EA9B8 /* Hero.swift */,
+				988BC99D19FD0AC9007EA9B8 /* FlappyHero.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -423,9 +423,9 @@
 			files = (
 				13ECE18E19FC0BAD008052A3 /* GameScene.swift in Sources */,
 				9861405C19EB2B7000AF733A /* ViewController.swift in Sources */,
-				98B1EB7F19FC4B3700717B81 /* TestScene.swift in Sources */,
+				98B1EB7F19FC4B3700717B81 /* FlappyScene.swift in Sources */,
 				9861405A19EB2B7000AF733A /* AppDelegate.swift in Sources */,
-				988BC99E19FD0AC9007EA9B8 /* Hero.swift in Sources */,
+				988BC99E19FD0AC9007EA9B8 /* FlappyHero.swift in Sources */,
 				98B1EB8319FC548A00717B81 /* GameViewController.swift in Sources */,
 				13ECE19119FC0E19008052A3 /* BaseScene.swift in Sources */,
 			);

@@ -8,11 +8,11 @@
 
 import SpriteKit
 
-public class TestScene : BaseScene {
-    var hero : Hero = Hero()
+public class FlappyScene : BaseScene {
+    var hero : FlappyHero = FlappyHero()
     
     override init() {
-        super.init()
+        super.init()        
     }
 
     required public init?(coder aDecoder: NSCoder) {
@@ -23,6 +23,10 @@ public class TestScene : BaseScene {
         super.onStartScene()
         hero.position = CGPoint(x: 100, y: 100)
         addChild(hero)
+    }
+    
+    public override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+        hero.touchesBegan(touches, withEvent: event)
     }
     
 }
