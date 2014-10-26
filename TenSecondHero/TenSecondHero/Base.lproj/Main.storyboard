@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
     </dependencies>
@@ -16,8 +16,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="title_screen.png" translatesAutoresizingMaskIntoConstraints="NO" id="1gu-ed-Uwu">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8p9-N4-mnZ">
-                                <rect key="frame" x="400" y="90" width="160" height="50"/>
+                                <rect key="frame" x="220" y="161" width="160" height="50"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                 <state key="normal" title="New Game">
                                     <color key="titleShadowColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -27,7 +30,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NIl-DI-vUp">
-                                <rect key="frame" x="400" y="148" width="160" height="50"/>
+                                <rect key="frame" x="220" y="208" width="160" height="50"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                 <state key="normal" title="Options">
                                     <color key="titleShadowColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -47,12 +50,12 @@
         <!--Game-->
         <scene sceneID="A1P-gy-U7j">
             <objects>
-                <viewController title="Game" id="7wI-ZS-bH2" customClass="GameViewController" customModule="TenSecondHero" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Game" id="7wI-ZS-bH2" customClass="GameViewController" customModule="TenSecondHero" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="M1X-wS-KRb"/>
                         <viewControllerLayoutGuide type="bottom" id="hJO-zX-2e8"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="ZYR-Jc-RW5">
+                    <view key="view" contentMode="scaleToFill" id="ZYR-Jc-RW5" customClass="SKView">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -61,7 +64,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CGi-8N-Inr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="791" y="138"/>
+            <point key="canvasLocation" x="1418" y="435"/>
         </scene>
         <!--Options-->
         <scene sceneID="BgU-OK-fuC">
@@ -83,7 +86,10 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7ky-Jc-QvQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="791" y="889"/>
+            <point key="canvasLocation" x="700" y="1226"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="title_screen.png" width="640" height="480"/>
+    </resources>
 </document>

@@ -10,9 +10,12 @@ import SpriteKit
 
 class GameScene : SKScene {
     // Current Scene displayed
-    var currentScene : BaseScene = BaseScene()
+    var currentScene : BaseScene = TestScene()
     
     override func didMoveToView(view: SKView) {
+        addChild(currentScene)
+        
+        currentScene.onStartScene()
     }
     
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {

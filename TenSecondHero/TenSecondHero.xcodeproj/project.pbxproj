@@ -39,6 +39,12 @@
 		9861406119EB2B7000AF733A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9861406019EB2B7000AF733A /* Images.xcassets */; };
 		9861406419EB2B7000AF733A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9861406219EB2B7000AF733A /* LaunchScreen.xib */; };
 		9861407019EB2B7000AF733A /* TenSecondHeroTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9861406F19EB2B7000AF733A /* TenSecondHeroTests.swift */; };
+		988BC99819FD070C007EA9B8 /* Credits.aifc in Resources */ = {isa = PBXBuildFile; fileRef = 988BC99319FD070C007EA9B8 /* Credits.aifc */; };
+		988BC99919FD070C007EA9B8 /* PressStart.aifc in Resources */ = {isa = PBXBuildFile; fileRef = 988BC99419FD070C007EA9B8 /* PressStart.aifc */; };
+		988BC99A19FD070C007EA9B8 /* SaveMe.aifc in Resources */ = {isa = PBXBuildFile; fileRef = 988BC99519FD070C007EA9B8 /* SaveMe.aifc */; };
+		988BC99B19FD070C007EA9B8 /* ScoreTime.aifc in Resources */ = {isa = PBXBuildFile; fileRef = 988BC99619FD070C007EA9B8 /* ScoreTime.aifc */; };
+		988BC99C19FD070C007EA9B8 /* WeDontNeedAHero.aifc in Resources */ = {isa = PBXBuildFile; fileRef = 988BC99719FD070C007EA9B8 /* WeDontNeedAHero.aifc */; };
+		988BC99E19FD0AC9007EA9B8 /* Hero.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988BC99D19FD0AC9007EA9B8 /* Hero.swift */; };
 		98B1EB7F19FC4B3700717B81 /* TestScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B1EB7E19FC4B3700717B81 /* TestScene.swift */; };
 		98B1EB8319FC548A00717B81 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B1EB8219FC548A00717B81 /* GameViewController.swift */; };
 /* End PBXBuildFile section */
@@ -83,11 +89,6 @@
 		13ECE1C219FC176A008052A3 /* drop.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = drop.caf; sourceTree = "<group>"; };
 		13ECE1C319FC176A008052A3 /* explosion.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = explosion.caf; sourceTree = "<group>"; };
 		13ECE1C419FC176A008052A3 /* pickup.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = pickup.caf; sourceTree = "<group>"; };
-		13ECE1C519FC1799008052A3 /* Credits.aifc */ = {isa = PBXFileReference; lastKnownFileType = file; path = Credits.aifc; sourceTree = "<group>"; };
-		13ECE1C619FC1799008052A3 /* PressStart.aifc */ = {isa = PBXFileReference; lastKnownFileType = file; path = PressStart.aifc; sourceTree = "<group>"; };
-		13ECE1C719FC1799008052A3 /* SaveMe.aifc */ = {isa = PBXFileReference; lastKnownFileType = file; path = SaveMe.aifc; sourceTree = "<group>"; };
-		13ECE1C819FC1799008052A3 /* ScoreTime.aifc */ = {isa = PBXFileReference; lastKnownFileType = file; path = ScoreTime.aifc; sourceTree = "<group>"; };
-		13ECE1C919FC1799008052A3 /* WeDontNeedAHero.aifc */ = {isa = PBXFileReference; lastKnownFileType = file; path = WeDontNeedAHero.aifc; sourceTree = "<group>"; };
 		9861405419EB2B7000AF733A /* TenSecondHero.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TenSecondHero.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9861405819EB2B7000AF733A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9861405919EB2B7000AF733A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -98,6 +99,12 @@
 		9861406919EB2B7000AF733A /* TenSecondHeroTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TenSecondHeroTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9861406E19EB2B7000AF733A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9861406F19EB2B7000AF733A /* TenSecondHeroTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TenSecondHeroTests.swift; sourceTree = "<group>"; };
+		988BC99319FD070C007EA9B8 /* Credits.aifc */ = {isa = PBXFileReference; lastKnownFileType = file; path = Credits.aifc; sourceTree = "<group>"; };
+		988BC99419FD070C007EA9B8 /* PressStart.aifc */ = {isa = PBXFileReference; lastKnownFileType = file; path = PressStart.aifc; sourceTree = "<group>"; };
+		988BC99519FD070C007EA9B8 /* SaveMe.aifc */ = {isa = PBXFileReference; lastKnownFileType = file; path = SaveMe.aifc; sourceTree = "<group>"; };
+		988BC99619FD070C007EA9B8 /* ScoreTime.aifc */ = {isa = PBXFileReference; lastKnownFileType = file; path = ScoreTime.aifc; sourceTree = "<group>"; };
+		988BC99719FD070C007EA9B8 /* WeDontNeedAHero.aifc */ = {isa = PBXFileReference; lastKnownFileType = file; path = WeDontNeedAHero.aifc; sourceTree = "<group>"; };
+		988BC99D19FD0AC9007EA9B8 /* Hero.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hero.swift; sourceTree = "<group>"; };
 		98B1EB7E19FC4B3700717B81 /* TestScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestScene.swift; sourceTree = "<group>"; };
 		98B1EB8219FC548A00717B81 /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -190,11 +197,11 @@
 		13FE500819FBFF3800569200 /* Music */ = {
 			isa = PBXGroup;
 			children = (
-				13ECE1C519FC1799008052A3 /* Credits.aifc */,
-				13ECE1C619FC1799008052A3 /* PressStart.aifc */,
-				13ECE1C719FC1799008052A3 /* SaveMe.aifc */,
-				13ECE1C819FC1799008052A3 /* ScoreTime.aifc */,
-				13ECE1C919FC1799008052A3 /* WeDontNeedAHero.aifc */,
+				988BC99319FD070C007EA9B8 /* Credits.aifc */,
+				988BC99419FD070C007EA9B8 /* PressStart.aifc */,
+				988BC99519FD070C007EA9B8 /* SaveMe.aifc */,
+				988BC99619FD070C007EA9B8 /* ScoreTime.aifc */,
+				988BC99719FD070C007EA9B8 /* WeDontNeedAHero.aifc */,
 			);
 			path = Music;
 			sourceTree = "<group>";
@@ -271,6 +278,7 @@
 		98B1EB8019FC4EE500717B81 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				988BC99D19FD0AC9007EA9B8 /* Hero.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -371,6 +379,7 @@
 				13ECE1BA19FC12BD008052A3 /* hero_failure.png in Resources */,
 				13ECE1B919FC12BD008052A3 /* grandmacitizen01.png in Resources */,
 				13ECE1B719FC12BD008052A3 /* girlcitizen01.png in Resources */,
+				988BC99919FD070C007EA9B8 /* PressStart.aifc in Resources */,
 				13ECE1B119FC12BD008052A3 /* boycitizen01.png in Resources */,
 				13ECE1C119FC12BD008052A3 /* train.png in Resources */,
 				13ECE1B019FC12BD008052A3 /* bomb.png in Resources */,
@@ -380,13 +389,17 @@
 				13ECE1BB19FC12BD008052A3 /* human.png in Resources */,
 				13ECE19819FC1253008052A3 /* background_morningsky.png in Resources */,
 				9861405F19EB2B7000AF733A /* Main.storyboard in Resources */,
+				988BC99C19FD070C007EA9B8 /* WeDontNeedAHero.aifc in Resources */,
 				13ECE1C019FC12BD008052A3 /* thief01.png in Resources */,
 				13ECE19719FC1253008052A3 /* background_city01.png in Resources */,
+				988BC99A19FD070C007EA9B8 /* SaveMe.aifc in Resources */,
 				9861406419EB2B7000AF733A /* LaunchScreen.xib in Resources */,
+				988BC99B19FD070C007EA9B8 /* ScoreTime.aifc in Resources */,
 				13ECE19A19FC1253008052A3 /* title_screen.png in Resources */,
 				13ECE1B519FC12BD008052A3 /* exit.png in Resources */,
 				13ECE1B819FC12BD008052A3 /* girlcitizen02.png in Resources */,
 				13ECE19B19FC1253008052A3 /* title.png in Resources */,
+				988BC99819FD070C007EA9B8 /* Credits.aifc in Resources */,
 				13ECE1BE19FC12BD008052A3 /* railroad.png in Resources */,
 				13ECE1B419FC12BD008052A3 /* cat.png in Resources */,
 				13ECE1BF19FC12BD008052A3 /* strongman01.png in Resources */,
@@ -412,6 +425,7 @@
 				9861405C19EB2B7000AF733A /* ViewController.swift in Sources */,
 				98B1EB7F19FC4B3700717B81 /* TestScene.swift in Sources */,
 				9861405A19EB2B7000AF733A /* AppDelegate.swift in Sources */,
+				988BC99E19FD0AC9007EA9B8 /* Hero.swift in Sources */,
 				98B1EB8319FC548A00717B81 /* GameViewController.swift in Sources */,
 				13ECE19119FC0E19008052A3 /* BaseScene.swift in Sources */,
 			);
