@@ -12,7 +12,8 @@ public class ParallaxBackground : SKNode {
     
     var images : [SKSpriteNode] = []
     var screenSize : CGSize = CGSize()
-    let frameTime : Double = 0.0
+    var frameTime : Double = 0.0
+    var inverted : Bool = false
     
     override init(){
         super.init()
@@ -20,43 +21,83 @@ public class ParallaxBackground : SKNode {
     
     init(imageNamed : String, size : CGSize, velocity : Double) {
         self.screenSize = size
-        self.frameTime = 60 * velocity
+        self.frameTime = 60 * abs(velocity)
+        self.inverted = (velocity < 0.0)
         
         super.init()
         
         images.insert(SKSpriteNode(imageNamed: imageNamed), atIndex: 0)
         images[0].size = screenSize
-        images[0].position = getPosition(CGPoint(x: 0,y: 0))
-        images[0].runAction(SKAction.repeatActionForever(
-            SKAction.sequence([
-                SKAction.moveTo(getPosition(CGPoint(x: screenSize.width, y: 0)), duration: frameTime),
-                SKAction.runBlock({self.images[0].position = self.getPosition(CGPoint(x: -self.screenSize.width * 2,y: 0))}),
-                SKAction.moveTo(getPosition(CGPoint(x: 0, y: 0)), duration: frameTime * 2)
-            ])
-        ))
-        self.addChild(images[0])
         
         images.insert(SKSpriteNode(imageNamed: imageNamed), atIndex: 1)
         images[1].size = screenSize
-        images[1].position = getPosition(CGPoint(x: -screenSize.width,y: 0))
-        images[1].runAction(SKAction.repeatActionForever(
-            SKAction.sequence([
-                SKAction.moveTo(getPosition(CGPoint(x: screenSize.width, y: 0)), duration: frameTime * 2),
-                SKAction.runBlock({self.images[1].position = self.getPosition(CGPoint(x: -self.screenSize.width * 2,y: 0))}),
-                SKAction.moveTo(getPosition(CGPoint(x: -screenSize.width, y: 0)), duration: frameTime)
-                ])
-            ))
-        self.addChild(images[1])
-        
+
         images.insert(SKSpriteNode(imageNamed: imageNamed), atIndex: 2)
         images[2].size = screenSize
-        images[2].position = getPosition(CGPoint(x: -screenSize.width * 2,y: 0))
-        images[2].runAction(SKAction.repeatActionForever(
-            SKAction.sequence([
-                SKAction.moveTo(getPosition(CGPoint(x: screenSize.width, y: 0)), duration: frameTime * 3),
-                SKAction.runBlock({self.images[2].position = self.getPosition(CGPoint(x: -self.screenSize.width * 2,y: 0))})
-                ])
-            ))
+
+        
+        if( !inverted ) {
+            /* BG 1 */
+            images[0].position = getPosition(CGPoint(x: 0,y: 0))
+            images[0].runAction(SKAction.repeatActionForever(
+                SKAction.sequence([
+                    SKAction.moveTo(getPosition(CGPoint(x: -screenSize.width, y: 0)), duration: frameTime),
+                    SKAction.runBlock({self.images[0].position = self.getPosition(CGPoint(x: self.screenSize.width * 2,y: 0))}),
+                    SKAction.moveTo(getPosition(CGPoint(x: 0, y: 0)), duration: frameTime * 2)
+                    ])
+                ))
+            
+            /* BG 2 */
+            images[1].position = getPosition(CGPoint(x: screenSize.width,y: 0))
+            images[1].runAction(SKAction.repeatActionForever(
+                SKAction.sequence([
+                    SKAction.moveTo(getPosition(CGPoint(x: -screenSize.width, y: 0)), duration: frameTime * 2),
+                    SKAction.runBlock({self.images[1].position = self.getPosition(CGPoint(x: self.screenSize.width * 2,y: 0))}),
+                    SKAction.moveTo(getPosition(CGPoint(x: screenSize.width, y: 0)), duration: frameTime)
+                    ])
+                ))
+            
+            /* BG 3 */
+            images[2].position = getPosition(CGPoint(x: screenSize.width * 2,y: 0))
+            images[2].runAction(SKAction.repeatActionForever(
+                SKAction.sequence([
+                    SKAction.moveTo(getPosition(CGPoint(x: -screenSize.width, y: 0)), duration: frameTime * 3),
+                    SKAction.runBlock({self.images[2].position = self.getPosition(CGPoint(x: self.screenSize.width * 2,y: 0))})
+                    ])
+                ))
+        } else {
+            /* BG 1 */
+            images[0].position = getPosition(CGPoint(x: 0,y: 0))
+            images[0].runAction(SKAction.repeatActionForever(
+                SKAction.sequence([
+                    SKAction.moveTo(getPosition(CGPoint(x: screenSize.width, y: 0)), duration: frameTime),
+                    SKAction.runBlock({self.images[0].position = self.getPosition(CGPoint(x: -self.screenSize.width * 2,y: 0))}),
+                    SKAction.moveTo(getPosition(CGPoint(x: 0, y: 0)), duration: frameTime * 2)
+                    ])
+                ))
+            
+            /* BG 2 */
+            images[1].position = getPosition(CGPoint(x: -screenSize.width,y: 0))
+            images[1].runAction(SKAction.repeatActionForever(
+                SKAction.sequence([
+                    SKAction.moveTo(getPosition(CGPoint(x: screenSize.width, y: 0)), duration: frameTime * 2),
+                    SKAction.runBlock({self.images[1].position = self.getPosition(CGPoint(x: -self.screenSize.width * 2,y: 0))}),
+                    SKAction.moveTo(getPosition(CGPoint(x: -screenSize.width, y: 0)), duration: frameTime)
+                    ])
+                ))
+            
+            /* BG 3 */
+            images[2].position = getPosition(CGPoint(x: -screenSize.width * 2,y: 0))
+            images[2].runAction(SKAction.repeatActionForever(
+                SKAction.sequence([
+                    SKAction.moveTo(getPosition(CGPoint(x: screenSize.width, y: 0)), duration: frameTime * 3),
+                    SKAction.runBlock({self.images[2].position = self.getPosition(CGPoint(x: -self.screenSize.width * 2,y: 0))})
+                    ])
+                ))
+        }
+        
+        self.addChild(images[0])
+        self.addChild(images[1])
         self.addChild(images[2])
     }
 
