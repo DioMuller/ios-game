@@ -22,11 +22,12 @@ public class FlappyScene : BaseScene {
     
     public override func onStartScene() {
         super.onStartScene()
+      
+        background = ParallaxBackground(imageNamed: "background_morningsky.png", size: self.scene!.size, velocity: 0.1)
+        addChild(background)
+        
         hero.position = CGPoint(x: 100, y: 100)
         addChild(hero)
-        
-        background = ParallaxBackground(imageNamed: "background_city01.png", size: self.scene!.size, velocity: 0.1)
-        addChild(background)
     }
     
     public override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
