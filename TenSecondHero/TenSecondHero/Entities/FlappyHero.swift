@@ -8,17 +8,19 @@
 
 import SpriteKit
 
+enum FlappyState {
+    case AwaitingStart, Playing, Dead
+}
+
 class FlappyHero : SKNode {
     var sprite : SKSpriteNode = SKSpriteNode(imageNamed: "10sechero.png")
     var sound : SKAction = SKAction.playSoundFileNamed("drop.caf", waitForCompletion: false)
+    var currentState : FlappyState = .AwaitingStart
     
     override init() {
         super.init()
         
         addChild(sprite)
-        
-        self.physicsBody = SKPhysicsBody(rectangleOfSize: sprite.size, center: sprite.position)
-        self.physicsBody?.affectedByGravity = true
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -26,8 +28,20 @@ class FlappyHero : SKNode {
     }
     
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
-        self.physicsBody?.velocity = CGVectorMake(0, 0)
-        self.physicsBody?.applyImpulse(CGVector(dx: 0.0, dy: 15.0))
-        self.runAction(sound)
+        
+        if( currentState == .AwaitingStart ) {
+            currentState = .Playing
+            self.physicsBody = SKPhysicsBody(rectangleOfSize: sprite.size, center: sprite.position)
+            self.physicsBody?.affectedByGravity = true
+        }
+         if( currentState == .Playing ) {
+            self.physicsBody?.velocity = CGVectorMake(0, 0)
+            self.physicsBody?.applyImpulse(CGVector(dx: 0.0, dy: 15.0))
+            self.runAction(sound)
+        }
+    }
+    
+    func die() {
+        self.currentState = .Dead
     }
 }
