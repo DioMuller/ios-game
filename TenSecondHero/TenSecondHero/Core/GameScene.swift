@@ -8,7 +8,7 @@
 
 import SpriteKit
 
-class GameScene : SKScene {
+class GameScene : SKScene, SKPhysicsContactDelegate {
     // Current Scene displayed
     var currentScene : BaseScene = FlappyScene()
     
@@ -20,7 +20,10 @@ class GameScene : SKScene {
         self.physicsBody = SKPhysicsBody(edgeLoopFromRect: self.frame)
         self.physicsBody?.affectedByGravity = false
         self.physicsBody?.dynamic = false
+        self.physicsBody?.categoryBitMask = Collisions.Level
         self.physicsWorld.gravity = CGVector(dx: 0.0, dy: -9.8)
+        
+        self.physicsWorld.contactDelegate = self
     }
     
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
@@ -32,4 +35,10 @@ class GameScene : SKScene {
     
     override func touchesEnded(touches: NSSet, withEvent event: UIEvent) {
     }
+    
+    func didBeginContact(contact: SKPhysicsContact) {
+        currentScene.didBeginContact(contact)
+    }
+    
+    
 }

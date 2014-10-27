@@ -33,6 +33,10 @@ class FlappyHero : SKNode {
             currentState = .Playing
             self.physicsBody = SKPhysicsBody(rectangleOfSize: sprite.size, center: sprite.position)
             self.physicsBody?.affectedByGravity = true
+
+            self.physicsBody?.categoryBitMask = Collisions.Player
+            self.physicsBody?.collisionBitMask = Collisions.All
+            self.physicsBody?.contactTestBitMask = Collisions.All - Collisions.Level
         }
          if( currentState == .Playing ) {
             self.physicsBody?.velocity = CGVectorMake(0, 0)

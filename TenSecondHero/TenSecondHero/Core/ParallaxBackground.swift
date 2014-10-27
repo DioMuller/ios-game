@@ -109,4 +109,10 @@ public class ParallaxBackground : SKNode {
     private func getPosition(point : CGPoint) -> CGPoint {
         return CGPoint(x: point.x + (screenSize.width / 2), y: point.y + (screenSize.height / 2))
     }
+    
+    public func stop(){
+        for image : SKSpriteNode in images {
+            image.removeAllActions()
+        }
+    }
 }

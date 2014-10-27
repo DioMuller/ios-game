@@ -30,4 +30,7 @@ public class BaseScene : SKNode {
     
     func update(currentTime: CFTimeInterval) {
     }
+    
+    func didBeginContact(contact: SKPhysicsContact) {
+    }
 }
