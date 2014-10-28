@@ -75,7 +75,13 @@ public class FlappyScene : BaseScene {
         
         newObstacle.runAction(SKAction.repeatActionForever(
             SKAction.sequence([
-                SKAction.moveToX(-100.0, duration: 8.0),
+                SKAction.moveToX(80.0, duration: 5.0),
+                SKAction.runBlock({
+                    if ( self.hero.currentState == FlappyState.Playing ) {
+                        self.rootParent.addScore(1)
+                    }
+                }),
+                SKAction.moveToX(-30, duration: 1.0),
                 SKAction.runBlock({
                     let xPos : Int = (Int(self.size.width)) + Int(newObstacle.size.width)
                     let yPos = Int(rand()) % Int(self.size.height)

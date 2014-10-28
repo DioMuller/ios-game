@@ -19,6 +19,12 @@ public class BaseScene : SKNode {
                 SKAction.playSoundFileNamed("SaveMe.aifc", waitForCompletion: true)
         ]))
     }
+    
+    var rootParent : GameScene {
+        get {
+            return self.parent as GameScene
+        }
+    }
 
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)

@@ -11,6 +11,9 @@ import SpriteKit
 class GameScene : SKScene, SKPhysicsContactDelegate {
     // Current Scene displayed
     var currentScene : BaseScene = FlappyScene()
+    var score : Int = 0
+    
+    var scoreText : SKLabelNode = SKLabelNode(fontNamed: "Chalkduster")
     
     override func didMoveToView(view: SKView) {
         addChild(currentScene)
@@ -24,6 +27,11 @@ class GameScene : SKScene, SKPhysicsContactDelegate {
         self.physicsWorld.gravity = CGVector(dx: 0.0, dy: -9.8)
         
         self.physicsWorld.contactDelegate = self
+        
+        scoreText.text = "Score: \(score)"
+        scoreText.position = CGPoint(x: 80, y: 30)
+        scoreText.fontColor = UIColor.redColor()
+        addChild(scoreText)
     }
     
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
@@ -40,5 +48,9 @@ class GameScene : SKScene, SKPhysicsContactDelegate {
         currentScene.didBeginContact(contact)
     }
     
+    func addScore(points : Int) {
+        score += points
+        scoreText.text = "Score: \(score)"
+    }
     
 }
