@@ -1,25 +1,26 @@
 //
-//  TestScene.swift
+//  ShootingScene.swift
 //  TenSecondHero
 //
-//  Created by pucpr on 25/10/14.
+//  Created by Diogo Muller on 10/29/14.
 //  Copyright (c) 2014 Diogo Muller. All rights reserved.
 //
 
 import SpriteKit
 
-public class FlappyScene : BaseScene {
-    var hero : FlappyHero = FlappyHero()
+public class ShootingScene : BaseScene {
+    var hero : ShootingHero = ShootingHero()
     var background : ParallaxBackground = ParallaxBackground()
     var ground : SKSpriteNode = SKSpriteNode()
     var obstacles : [SKSpriteNode] = []
-
+    var shoots : [SKSpriteNode] = []
+    
     var size : CGSize = CGSize()
     
     override init() {
-        super.init()        
+        super.init()
     }
-
+    
     required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -28,18 +29,9 @@ public class FlappyScene : BaseScene {
         super.onStartScene()
         
         size = self.scene!.size
-      
-        background = ParallaxBackground(imageNamed: "background_morningsky.png", size: self.scene!.size, velocity: 0.1)
-        addChild(background)
         
-        ground = SKSpriteNode(color: UIColor.greenColor(), size: CGSize(width: size.width, height: 50))
-        ground.position = CGPoint(x: (size.width / 2), y: 0)
-        ground.physicsBody = SKPhysicsBody(rectangleOfSize: ground.size)
-        ground.physicsBody?.dynamic = false
-        ground.physicsBody?.affectedByGravity = false
-        ground.physicsBody?.categoryBitMask = Collisions.Ground
-        ground.physicsBody?.contactTestBitMask = Collisions.Player
-        addChild(ground)
+        background = ParallaxBackground(imageNamed: "background_nightsky.png", size: self.scene!.size, velocity: 0.1)
+        addChild(background)
         
         hero.position = CGPoint(x: 100, y: 100)
         addChild(hero)
@@ -54,15 +46,24 @@ public class FlappyScene : BaseScene {
         hero.touchesBegan(touches, withEvent: event)
     }
     
+    public override func touchesMoved(touches: NSSet, withEvent event: UIEvent) {
+        hero.touchesMoved(touches, withEvent: event)
+    }
+    
     override func didBeginContact(contact: SKPhysicsContact) {
-        if( contact.bodyA == hero.physicsBody || contact.bodyB == hero.physicsBody ) {
-            hero.die()
-            background.stop()
+        for obstacle : SKSpriteNode in obstacles {
+            if( contact.bodyA == obstacle.physicsBody || contact.bodyB == obstacle.physicsBody ) {
+                if( contact.bodyA == hero.physicsBody || contact.bodyB == hero.physicsBody ) {
+                    hero.die()
+                    destroy(obstacle)
+                    background.stop()
+                }
+            }
         }
     }
     
     func createObstacle() {
-        var newObstacle = SKSpriteNode(imageNamed: "hero_failure.png")
+        var newObstacle = SKSpriteNode(imageNamed: "piu01.png")
         newObstacle.physicsBody = SKPhysicsBody(rectangleOfSize: newObstacle.size)
         
         let xPos : Int = (Int(size.width)) + Int(newObstacle.size.width)
@@ -75,13 +76,7 @@ public class FlappyScene : BaseScene {
         
         newObstacle.runAction(SKAction.repeatActionForever(
             SKAction.sequence([
-                SKAction.moveToX(80.0, duration: 5.0),
-                SKAction.runBlock({
-                    if ( self.hero.currentState == FlappyState.Playing ) {
-                        self.rootParent.addScore(1)
-                    }
-                }),
-                SKAction.moveToX(-30, duration: 1.0),
+                SKAction.moveToX(-30, duration: 5.0),
                 SKAction.runBlock({
                     let xPos : Int = (Int(self.size.width)) + Int(newObstacle.size.width)
                     let yPos = Int(rand()) % Int(self.size.height)
@@ -101,5 +96,14 @@ public class FlappyScene : BaseScene {
         
         obstacles.append(newObstacle)
         addChild(newObstacle)
+    }
+    
+    func destroy(contact : SKSpriteNode) {
+        contact.removeFromParent()
+        // TODO: Remove from obstacles.
+    }
+    
+    func createShoot() {
+        
     }
 }

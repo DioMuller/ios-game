@@ -52,6 +52,8 @@
 		98B1EB7F19FC4B3700717B81 /* FlappyScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B1EB7E19FC4B3700717B81 /* FlappyScene.swift */; };
 		98B1EB8319FC548A00717B81 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B1EB8219FC548A00717B81 /* GameViewController.swift */; };
 		98CE752019FEECE700D98EAD /* Collisions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98CE751F19FEECE700D98EAD /* Collisions.swift */; };
+		98EF19E71A01A3F9001D9571 /* ShootingHero.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98EF19E61A01A3F9001D9571 /* ShootingHero.swift */; };
+		98EF19EB1A01A9D9001D9571 /* ShootingScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98EF19EA1A01A9D9001D9571 /* ShootingScene.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,6 +116,8 @@
 		98B1EB7E19FC4B3700717B81 /* FlappyScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlappyScene.swift; sourceTree = "<group>"; };
 		98B1EB8219FC548A00717B81 /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		98CE751F19FEECE700D98EAD /* Collisions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Collisions.swift; sourceTree = "<group>"; };
+		98EF19E61A01A3F9001D9571 /* ShootingHero.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShootingHero.swift; sourceTree = "<group>"; };
+		98EF19EA1A01A9D9001D9571 /* ShootingScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShootingScene.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				98B1EB7E19FC4B3700717B81 /* FlappyScene.swift */,
+				98EF19EA1A01A9D9001D9571 /* ShootingScene.swift */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -287,6 +292,7 @@
 			isa = PBXGroup;
 			children = (
 				988BC99D19FD0AC9007EA9B8 /* FlappyHero.swift */,
+				98EF19E61A01A3F9001D9571 /* ShootingHero.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -449,6 +455,8 @@
 				988BC99E19FD0AC9007EA9B8 /* FlappyHero.swift in Sources */,
 				98B1EB8319FC548A00717B81 /* GameViewController.swift in Sources */,
 				98CE752019FEECE700D98EAD /* Collisions.swift in Sources */,
+				98EF19EB1A01A9D9001D9571 /* ShootingScene.swift in Sources */,
+				98EF19E71A01A3F9001D9571 /* ShootingHero.swift in Sources */,
 				13ECE19119FC0E19008052A3 /* BaseScene.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

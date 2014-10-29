@@ -10,7 +10,7 @@ import SpriteKit
 
 class GameScene : SKScene, SKPhysicsContactDelegate {
     // Current Scene displayed
-    var currentScene : BaseScene = FlappyScene()
+    var currentScene : BaseScene = ShootingScene()
     var score : Int = 0
     
     var scoreText : SKLabelNode = SKLabelNode(fontNamed: "Chalkduster")
@@ -39,9 +39,15 @@ class GameScene : SKScene, SKPhysicsContactDelegate {
     }
     
     override func touchesMoved(touches: NSSet, withEvent event: UIEvent) {
+        currentScene.touchesMoved(touches, withEvent: event)
     }
     
     override func touchesEnded(touches: NSSet, withEvent event: UIEvent) {
+        currentScene.touchesEnded(touches, withEvent: event)
+    }
+    
+    override func touchesCancelled(touches: NSSet!, withEvent event: UIEvent!) {
+        currentScene.touchesCancelled(touches, withEvent: event)
     }
     
     func didBeginContact(contact: SKPhysicsContact) {
