@@ -12,6 +12,7 @@ struct Collisions {
     static let Obstacle : UInt32 = 1 << 2
     static let Enemy : UInt32 = 1 << 3
     static let Ground : UInt32 = 1 << 4
+    static let Shoot : UInt32 = 1 << 5
     
     static let None : UInt32 = 0
     static let All : UInt32 = UInt32.max

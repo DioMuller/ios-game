@@ -30,6 +30,12 @@ class ShootingHero : SKNode {
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
         
         if( currentState == .AwaitingStart ) {
+            self.physicsBody = SKPhysicsBody(rectangleOfSize: self.sprite.size)
+            self.physicsBody?.categoryBitMask = Collisions.Player
+            self.physicsBody?.collisionBitMask = Collisions.None
+            self.physicsBody?.contactTestBitMask = Collisions.All - Collisions.Level - Collisions.Shoot
+            self.physicsBody?.affectedByGravity = false
+            
             currentState = .Idle
         }
         
@@ -42,6 +48,13 @@ class ShootingHero : SKNode {
                     currentState = .Moving
                 }
             }
+            
+            self.runAction(SKAction.repeatActionForever(SKAction.sequence([
+                    SKAction.runBlock({
+                        self.createShoot()
+                    }),
+                    SKAction.waitForDuration(1.0)
+                ])))
         }
     }
     
@@ -64,6 +77,7 @@ class ShootingHero : SKNode {
             }
             
             if( !changed ) {
+                self.removeAllActions()
                 currentState = .Idle
             } else {
                 self.position.y = chosenY

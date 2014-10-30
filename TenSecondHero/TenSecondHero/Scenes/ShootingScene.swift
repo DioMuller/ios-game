@@ -12,8 +12,6 @@ public class ShootingScene : BaseScene {
     var hero : ShootingHero = ShootingHero()
     var background : ParallaxBackground = ParallaxBackground()
     var ground : SKSpriteNode = SKSpriteNode()
-    var obstacles : [SKSpriteNode] = []
-    var shoots : [SKSpriteNode] = []
     
     var size : CGSize = CGSize()
     
@@ -38,7 +36,7 @@ public class ShootingScene : BaseScene {
         
         self.runAction(SKAction.repeatActionForever(SKAction.sequence([
             SKAction.runBlock(createObstacle),
-            SKAction.waitForDuration(17.5)
+            SKAction.waitForDuration(3.5)
             ])))
     }
     
@@ -51,19 +49,18 @@ public class ShootingScene : BaseScene {
     }
     
     override func didBeginContact(contact: SKPhysicsContact) {
-        for obstacle : SKSpriteNode in obstacles {
-            if( contact.bodyA == obstacle.physicsBody || contact.bodyB == obstacle.physicsBody ) {
-                if( contact.bodyA == hero.physicsBody || contact.bodyB == hero.physicsBody ) {
-                    hero.die()
-                    destroy(obstacle)
-                    background.stop()
-                }
-            }
+        contact.bodyA.node?.removeFromParent()
+        contact.bodyB.node?.removeFromParent()
+        
+        if( contact.bodyA.categoryBitMask == Collisions.Player || contact.bodyB.categoryBitMask == Collisions.Player ) {
+            // TODO: End Game
+        } else {
+            self.rootParent.addScore(1)
         }
     }
     
     func createObstacle() {
-        var newObstacle = SKSpriteNode(imageNamed: "piu01.png")
+        var newObstacle = SKSpriteNode(imageNamed: "train.png")
         newObstacle.physicsBody = SKPhysicsBody(rectangleOfSize: newObstacle.size)
         
         let xPos : Int = (Int(size.width)) + Int(newObstacle.size.width)
@@ -93,17 +90,27 @@ public class ShootingScene : BaseScene {
         newObstacle.physicsBody?.categoryBitMask = Collisions.Obstacle
         newObstacle.physicsBody?.affectedByGravity = false
         newObstacle.physicsBody?.collisionBitMask = Collisions.None
-        
-        obstacles.append(newObstacle)
+
         addChild(newObstacle)
     }
     
-    func destroy(contact : SKSpriteNode) {
-        contact.removeFromParent()
-        // TODO: Remove from obstacles.
-    }
-    
     func createShoot() {
+        var shoot : SKSpriteNode = SKSpriteNode(color: UIColor.redColor(), size: CGSize(width: 15, height: 5))
+        shoot.position = hero.position
         
+        shoot.runAction(SKAction.sequence([
+                SKAction.moveToX(self.scene!.size.width + 40, duration: 2.0),
+                SKAction.runBlock({
+                    shoot.removeFromParent()
+                })
+            ]))
+        
+        shoot.physicsBody = SKPhysicsBody(rectangleOfSize: shoot.size)
+        shoot.physicsBody?.categoryBitMask = Collisions.Shoot
+        shoot.physicsBody?.collisionBitMask = Collisions.None
+        shoot.physicsBody?.contactTestBitMask = Collisions.All - Collisions.Level - Collisions.Player
+        shoot.physicsBody?.affectedByGravity = false
+        
+        self.addChild(shoot)
     }
 }
