@@ -10,7 +10,7 @@ import SpriteKit
 
 class GameScene : SKScene, SKPhysicsContactDelegate {
     // Current Scene displayed
-    var currentScene : BaseScene = ShootingScene()
+    var currentScene : BaseScene = RunningScene()
     var score : Int = 0
     
     var scoreText : SKLabelNode = SKLabelNode(fontNamed: "Chalkduster")
