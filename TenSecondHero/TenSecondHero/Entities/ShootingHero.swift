@@ -87,6 +87,7 @@ class ShootingHero : SKNode {
     
     func createShoot() {
         (parent as ShootingScene).createShoot()
+        AudioManager.playSound("explosion")
     }
     
     

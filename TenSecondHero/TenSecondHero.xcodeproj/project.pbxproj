@@ -52,6 +52,7 @@
 		98B1EB7F19FC4B3700717B81 /* FlappyScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B1EB7E19FC4B3700717B81 /* FlappyScene.swift */; };
 		98B1EB8319FC548A00717B81 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B1EB8219FC548A00717B81 /* GameViewController.swift */; };
 		98CE752019FEECE700D98EAD /* Collisions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98CE751F19FEECE700D98EAD /* Collisions.swift */; };
+		98D450EB1A0455A70034A539 /* AudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D450EA1A0455A70034A539 /* AudioManager.swift */; };
 		98E27DCA1A03001B00BF9DBF /* RunningHero.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E27DC91A03001B00BF9DBF /* RunningHero.swift */; };
 		98E27DCC1A03025700BF9DBF /* RunningScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E27DCB1A03025700BF9DBF /* RunningScene.swift */; };
 		98EF19E71A01A3F9001D9571 /* ShootingHero.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98EF19E61A01A3F9001D9571 /* ShootingHero.swift */; };
@@ -118,6 +119,7 @@
 		98B1EB7E19FC4B3700717B81 /* FlappyScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlappyScene.swift; sourceTree = "<group>"; };
 		98B1EB8219FC548A00717B81 /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		98CE751F19FEECE700D98EAD /* Collisions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Collisions.swift; sourceTree = "<group>"; };
+		98D450EA1A0455A70034A539 /* AudioManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioManager.swift; sourceTree = "<group>"; };
 		98E27DC91A03001B00BF9DBF /* RunningHero.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RunningHero.swift; sourceTree = "<group>"; };
 		98E27DCB1A03025700BF9DBF /* RunningScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RunningScene.swift; sourceTree = "<group>"; };
 		98EF19E61A01A3F9001D9571 /* ShootingHero.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShootingHero.swift; sourceTree = "<group>"; };
@@ -309,6 +311,7 @@
 				13ECE18D19FC0BAD008052A3 /* GameScene.swift */,
 				13ECE19019FC0E19008052A3 /* BaseScene.swift */,
 				988BC9A519FDBA36007EA9B8 /* ParallaxBackground.swift */,
+				98D450EA1A0455A70034A539 /* AudioManager.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -461,6 +464,7 @@
 				98B1EB7F19FC4B3700717B81 /* FlappyScene.swift in Sources */,
 				9861405A19EB2B7000AF733A /* AppDelegate.swift in Sources */,
 				988BC99E19FD0AC9007EA9B8 /* FlappyHero.swift in Sources */,
+				98D450EB1A0455A70034A539 /* AudioManager.swift in Sources */,
 				98B1EB8319FC548A00717B81 /* GameViewController.swift in Sources */,
 				98CE752019FEECE700D98EAD /* Collisions.swift in Sources */,
 				98EF19EB1A01A9D9001D9571 /* ShootingScene.swift in Sources */,

@@ -14,7 +14,6 @@ enum RunningState {
 
 class RunningHero : SKNode {
     var sprite : SKSpriteNode = SKSpriteNode(imageNamed: "strongman01.png")
-    var sound : SKAction = SKAction.playSoundFileNamed("drop.caf", waitForCompletion: false)
     var currentState : RunningState = .AwaitingStart
     
     override init() {
@@ -42,7 +41,7 @@ class RunningHero : SKNode {
         if( currentState == .Running ) {
             self.physicsBody?.velocity = CGVectorMake(0, 0)
             self.physicsBody?.applyImpulse(CGVector(dx: 0.0, dy: 20.0))
-            self.runAction(sound)
+            AudioManager.playSound("drop")
             self.currentState = .Jumping
         }
     }

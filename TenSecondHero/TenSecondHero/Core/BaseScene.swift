@@ -13,11 +13,7 @@ public class BaseScene : SKNode {
     
     override public init() {
         super.init()
-        musicAction = SKAction.repeatActionForever(
-            SKAction.sequence([
-                SKAction.playSoundFileNamed("WeDontNeedAHero.aifc", waitForCompletion: true),
-                SKAction.playSoundFileNamed("SaveMe.aifc", waitForCompletion: true)
-        ]))
+        AudioManager.playMusic("WeDontNeedAHero")
     }
     
     var rootParent : GameScene {
