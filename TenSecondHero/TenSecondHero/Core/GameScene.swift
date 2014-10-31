@@ -8,15 +8,22 @@
 
 import SpriteKit
 
+struct Minigames {
+    static var Flap : Int = 0
+    static var Shoot : Int = 1
+    static var Run : Int = 2
+    
+    static var Count = 3
+}
+
 class GameScene : SKScene, SKPhysicsContactDelegate {
     // Current Scene displayed
-    var currentScene : BaseScene = RunningScene()
+    var currentScene : BaseScene = BaseScene()
     var score : Int = 0
     
     var scoreText : SKLabelNode = SKLabelNode(fontNamed: "Chalkduster")
     
     override func didMoveToView(view: SKView) {
-        addChild(currentScene)
         
         currentScene.onStartScene()
         
@@ -32,6 +39,13 @@ class GameScene : SKScene, SKPhysicsContactDelegate {
         scoreText.position = CGPoint(x: 80, y: 30)
         scoreText.fontColor = UIColor.redColor()
         addChild(scoreText)
+        
+        runAction(SKAction.repeatActionForever(SKAction.sequence([
+            SKAction.runBlock({
+                self.LoadNext()
+            }),
+            SKAction.waitForDuration(10.0)
+        ])))
     }
     
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
@@ -57,6 +71,30 @@ class GameScene : SKScene, SKPhysicsContactDelegate {
     func addScore(points : Int) {
         score += points
         scoreText.text = "Score: \(score)"
+    }
+    
+    func LoadNext(){
+        var next : Int = random() % Minigames.Count
+        currentScene.removeFromParent()
+        scoreText.removeFromParent()
+        
+        switch(next) {
+            case Minigames.Flap:
+                currentScene = FlappyScene()
+                break
+            case Minigames.Shoot:
+                currentScene = ShootingScene()
+                break
+            case Minigames.Run:
+                currentScene = RunningScene()
+                break
+            default:
+                LoadNext()
+        }
+        
+        addChild(currentScene)
+        currentScene.onStartScene()
+        addChild(scoreText)
     }
     
 }
