@@ -13,7 +13,11 @@ public class BaseScene : SKNode {
     
     override public init() {
         super.init()
-        AudioManager.playMusic("WeDontNeedAHero")
+        AudioManager.playMusic(sceneMusic)
+    }
+    
+    public var sceneMusic : String {
+        get { return "WeDontNeedAHero" }
     }
     
     var rootParent : GameScene {

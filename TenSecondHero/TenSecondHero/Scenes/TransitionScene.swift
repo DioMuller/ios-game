@@ -19,6 +19,10 @@ public class TransitionScene : BaseScene {
         self.text = message
     }
     
+    public override var sceneMusic : String {
+        get { return "ScoreTime" }
+    }
+    
     required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

@@ -24,6 +24,10 @@ public class FlappyScene : BaseScene {
         fatalError("init(coder:) has not been implemented")
     }
     
+    public override var sceneMusic : String {
+        get { return "SaveMe" }
+    }
+    
     public override func onStartScene() {
         super.onStartScene()
         

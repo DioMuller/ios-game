@@ -21,6 +21,7 @@ class FlappyHero : SKNode {
         
         addChild(sprite)
     }
+    
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)

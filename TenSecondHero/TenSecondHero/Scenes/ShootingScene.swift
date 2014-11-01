@@ -106,19 +106,21 @@ public class ShootingScene : BaseScene {
         var shoot : SKSpriteNode = SKSpriteNode(color: UIColor.redColor(), size: CGSize(width: 15, height: 5))
         shoot.position = hero.position
         
-        shoot.runAction(SKAction.sequence([
+        if( self.scene != nil ) {
+            shoot.runAction(SKAction.sequence([
                 SKAction.moveToX(self.scene!.size.width + 40, duration: 2.0),
                 SKAction.runBlock({
-                    shoot.removeFromParent()
-                })
-            ]))
+                        shoot.removeFromParent()
+                    })
+                ]))
         
-        shoot.physicsBody = SKPhysicsBody(rectangleOfSize: shoot.size)
-        shoot.physicsBody?.categoryBitMask = Collisions.Shoot
-        shoot.physicsBody?.collisionBitMask = Collisions.None
-        shoot.physicsBody?.contactTestBitMask = Collisions.All - Collisions.Level - Collisions.Player
-        shoot.physicsBody?.affectedByGravity = false
+            shoot.physicsBody = SKPhysicsBody(rectangleOfSize: shoot.size)
+            shoot.physicsBody?.categoryBitMask = Collisions.Shoot
+            shoot.physicsBody?.collisionBitMask = Collisions.None
+            shoot.physicsBody?.contactTestBitMask = Collisions.All - Collisions.Level - Collisions.Player
+            shoot.physicsBody?.affectedByGravity = false
         
-        self.addChild(shoot)
+            self.addChild(shoot)
+        }
     }
 }
