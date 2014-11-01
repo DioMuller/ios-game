@@ -79,9 +79,24 @@ class ShootingHero : SKNode {
             if( !changed ) {
                 self.removeAllActions()
                 currentState = .Idle
+                removeAllActions()
             } else {
                 self.position.y = chosenY
             }
+        }
+    }
+    
+    override func touchesCancelled(touches: NSSet!, withEvent event: UIEvent!) {
+        if(currentState == .Moving) {
+            currentState = .Idle
+            removeAllActions()
+        }
+    }
+    
+    override func touchesEnded(touches: NSSet, withEvent event: UIEvent) {
+        if(currentState == .Moving) {
+            currentState = .Idle
+            removeAllActions()
         }
     }
     
