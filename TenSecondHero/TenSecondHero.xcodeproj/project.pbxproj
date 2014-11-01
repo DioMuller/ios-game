@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		131A78191A054F5100A73FD9 /* TransitionScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 131A78181A054F5100A73FD9 /* TransitionScene.swift */; };
 		13ECE18E19FC0BAD008052A3 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13ECE18D19FC0BAD008052A3 /* GameScene.swift */; };
 		13ECE19119FC0E19008052A3 /* BaseScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13ECE19019FC0E19008052A3 /* BaseScene.swift */; };
 		13ECE19719FC1253008052A3 /* background_city01.png in Resources */ = {isa = PBXBuildFile; fileRef = 13ECE19219FC1253008052A3 /* background_city01.png */; };
@@ -71,6 +72,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		131A78181A054F5100A73FD9 /* TransitionScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionScene.swift; sourceTree = "<group>"; };
 		13ECE18D19FC0BAD008052A3 /* GameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		13ECE19019FC0E19008052A3 /* BaseScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseScene.swift; sourceTree = "<group>"; };
 		13ECE19219FC1253008052A3 /* background_city01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background_city01.png; sourceTree = "<group>"; };
@@ -152,6 +154,7 @@
 				98B1EB7E19FC4B3700717B81 /* FlappyScene.swift */,
 				98EF19EA1A01A9D9001D9571 /* ShootingScene.swift */,
 				98E27DCB1A03025700BF9DBF /* RunningScene.swift */,
+				131A78181A054F5100A73FD9 /* TransitionScene.swift */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -468,6 +471,7 @@
 				9861405A19EB2B7000AF733A /* AppDelegate.swift in Sources */,
 				988BC99E19FD0AC9007EA9B8 /* FlappyHero.swift in Sources */,
 				98D450EB1A0455A70034A539 /* AudioManager.swift in Sources */,
+				131A78191A054F5100A73FD9 /* TransitionScene.swift in Sources */,
 				98D450ED1A045ACF0034A539 /* OptionsViewController.swift in Sources */,
 				98B1EB8319FC548A00717B81 /* GameViewController.swift in Sources */,
 				98CE752019FEECE700D98EAD /* Collisions.swift in Sources */,

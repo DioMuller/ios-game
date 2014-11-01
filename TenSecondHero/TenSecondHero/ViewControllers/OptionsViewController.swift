@@ -15,7 +15,6 @@ class OptionsViewController : UIViewController {
 
     @IBAction func musicVolumeChanged(sender: UISlider) {
         AudioManager.musicVolume = sender.value
-        AudioManager.updateMusicVolume()
     }
     
     @IBAction func soundVolumeChanged(sender: AnyObject) {
