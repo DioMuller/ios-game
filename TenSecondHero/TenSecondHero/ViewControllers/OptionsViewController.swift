@@ -10,17 +10,26 @@ import UIKit
 
 class OptionsViewController : UIViewController {
     
-    @IBOutlet weak var musicVolumeSlider: UISlider!
-    @IBOutlet weak var soundVolumeSlider: UISlider!
-    
-    @IBAction func saveClick(sender: AnyObject) {
-        AudioManager.musicVolume = musicVolumeSlider.value
-        AudioManager.soundVolume = soundVolumeSlider.value
+    @IBOutlet weak var sliderMusicVolume: UISlider!
+    @IBOutlet weak var sliderSoundVolume: UISlider!
+
+    @IBAction func musicVolumeChanged(sender: UISlider) {
+        AudioManager.musicVolume = sender.value
+        AudioManager.updateMusicVolume()
     }
+    
+    @IBAction func soundVolumeChanged(sender: AnyObject) {
+        AudioManager.soundVolume = sender.value
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        sliderMusicVolume.value = AudioManager.musicVolume
+        sliderSoundVolume.value = AudioManager.soundVolume
     }
+    
     
     override func viewWillDisappear(animated: Bool) {
     }

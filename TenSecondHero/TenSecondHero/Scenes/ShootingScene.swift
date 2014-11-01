@@ -48,6 +48,14 @@ public class ShootingScene : BaseScene {
         hero.touchesMoved(touches, withEvent: event)
     }
     
+    public override func touchesEnded(touches: NSSet, withEvent event: UIEvent) {
+        hero.touchesEnded(touches, withEvent: event)
+    }
+    
+    public override func touchesCancelled(touches: NSSet!, withEvent event: UIEvent!) {
+        hero.touchesCancelled(touches, withEvent: event)
+    }
+    
     override func didBeginContact(contact: SKPhysicsContact) {
         contact.bodyA.node?.removeFromParent()
         contact.bodyB.node?.removeFromParent()

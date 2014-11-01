@@ -12,8 +12,8 @@ public struct AudioManager {
     static var musicPlayer : AVAudioPlayer = AVAudioPlayer()
     static var soundPlayer : AVAudioPlayer = AVAudioPlayer()
     
-    static var musicVolume : Float = 100.0
-    static var soundVolume : Float = 100.0
+    static var musicVolume : Float = 1.0
+    static var soundVolume : Float = 1.0
 
     static public func playMusic(file : String ) {
         var file : NSURL = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource(file, ofType: "aifc")!)!
@@ -21,7 +21,7 @@ public struct AudioManager {
         musicPlayer = AVAudioPlayer(contentsOfURL: file, error: &error )
     
         musicPlayer.numberOfLoops = -1
-        musicPlayer.volume = musicVolume / 100.0
+        musicPlayer.volume = musicVolume
         musicPlayer.prepareToPlay()
         musicPlayer.play()
     }
@@ -32,8 +32,12 @@ public struct AudioManager {
         soundPlayer = AVAudioPlayer(contentsOfURL: file, error: &error )
         
         soundPlayer.numberOfLoops = 0
-        soundPlayer.volume = soundVolume / 100.0
+        soundPlayer.volume = soundVolume
         soundPlayer.prepareToPlay()
         soundPlayer.play()
+    }
+    
+    public static func updateMusicVolume() {
+        musicPlayer.volume = musicVolume
     }
 }
