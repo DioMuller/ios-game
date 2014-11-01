@@ -14,6 +14,19 @@ struct Minigames {
     static var Run : Int = 2
     
     static var Count = 3
+    
+    static func getTitle(type : Int ) -> String {
+        switch(type) {
+            case Flap:
+                return "Flap"
+            case Shoot:
+                return "Shoot"
+            case Run:
+                return "Run"
+            default:
+                return "Error"
+        }
+    }
 }
 
 class GameScene : SKScene, SKPhysicsContactDelegate {
@@ -22,6 +35,7 @@ class GameScene : SKScene, SKPhysicsContactDelegate {
     var score : Int = 0
     
     var scoreText : SKLabelNode = SKLabelNode(fontNamed: "Chalkduster")
+    var nextLevel : Int = 0
     
     override func didMoveToView(view: SKView) {
         
@@ -41,9 +55,10 @@ class GameScene : SKScene, SKPhysicsContactDelegate {
         addChild(scoreText)
         
         runAction(SKAction.repeatActionForever(SKAction.sequence([
-            SKAction.runBlock({
-                self.LoadNext()
-            }),
+            SKAction.runBlock({self.chooseNext()}),
+            SKAction.runBlock({self.loadTransition()}),
+            SKAction.waitForDuration(3.0),
+            SKAction.runBlock({self.loadNext()}),
             SKAction.waitForDuration(10.0)
         ])))
     }
@@ -73,12 +88,23 @@ class GameScene : SKScene, SKPhysicsContactDelegate {
         scoreText.text = "Score: \(score)"
     }
     
-    func LoadNext(){
-        var next : Int = random() % Minigames.Count
+    func loadTransition() {
         currentScene.removeFromParent()
         scoreText.removeFromParent()
         
-        switch(next) {
+        currentScene = TransitionScene(message: Minigames.getTitle(nextLevel))
+        
+        addChild(currentScene)
+        currentScene.onStartScene()
+        addChild(scoreText)
+    }
+    
+    func loadNext(){
+        
+        currentScene.removeFromParent()
+        scoreText.removeFromParent()
+        
+        switch(nextLevel) {
             case Minigames.Flap:
                 currentScene = FlappyScene()
                 break
@@ -89,12 +115,17 @@ class GameScene : SKScene, SKPhysicsContactDelegate {
                 currentScene = RunningScene()
                 break
             default:
-                LoadNext()
+                chooseNext()
+                loadNext()
         }
         
         addChild(currentScene)
         currentScene.onStartScene()
         addChild(scoreText)
+    }
+    
+    func chooseNext() {
+        nextLevel = random() % Minigames.Count
     }
     
 }

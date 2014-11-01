@@ -17,8 +17,6 @@ public class TransitionScene : BaseScene {
     init(message : String) {
         super.init()
         self.text = message
-        self.size = self.scene!.size
-        
     }
     
     required public init?(coder aDecoder: NSCoder) {
@@ -28,7 +26,11 @@ public class TransitionScene : BaseScene {
     public override func onStartScene() {
         super.onStartScene()
         
-        size = self.scene!.size
+        self.size = self.scene!.size
+        
+        messageText.text = self.text
+        messageText.position = CGPoint(x: self.size.width / 2, y: self.size.height / 2)
+        addChild(messageText)
     }
     
     public override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
