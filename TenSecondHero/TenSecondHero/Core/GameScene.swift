@@ -20,6 +20,7 @@ class GameScene : SKScene, SKPhysicsContactDelegate {
     
     // GUI Items
     var scoreText : SKLabelNode = SKLabelNode(fontNamed: "Chalkduster")
+    var highscoreText : SKLabelNode = SKLabelNode(fontNamed: "Chalkduster")
     var livesText : SKLabelNode = SKLabelNode(fontNamed: "Chalkduster")
     var countdownText : SKLabelNode = SKLabelNode(fontNamed: "Chalkduster")
     
@@ -28,6 +29,7 @@ class GameScene : SKScene, SKPhysicsContactDelegate {
     
     // Game State Helpers
     var score : Int = 0
+    var highscore : Int = 0
     var nextLevel : Int = -1
     private var countdownTimer : Int = 0
     private var levelEnded : Bool = false
@@ -82,6 +84,8 @@ class GameScene : SKScene, SKPhysicsContactDelegate {
         
         currentScene.onStartScene()
         
+        highscore = HighScores().getHighscoreForGame(nextLevel)
+        
         /* World Physics */
         self.physicsBody = SKPhysicsBody(edgeLoopFromRect: self.frame)
         self.physicsBody?.affectedByGravity = false
@@ -92,9 +96,16 @@ class GameScene : SKScene, SKPhysicsContactDelegate {
         
         /* Score Text */
         scoreText.text = "Score: \(score)"
-        scoreText.position = CGPoint(x: 100, y: size.height - 30)
+        scoreText.position = CGPoint(x: 100, y: size.height - 50)
         scoreText.fontColor = UIColor.redColor()
         self.addChild(scoreText)
+        
+        /* Highscore Text */
+        highscoreText.text = "High Score: \(highscore)"
+        highscoreText.position = CGPoint(x: 100, y: size.height - 20)
+        highscoreText.fontSize = 12
+        highscoreText.fontColor = UIColor.redColor()
+        self.addChild(highscoreText)
         
         /* Lives Text */
         livesText.text = "Lives: \(lives)"
@@ -146,7 +157,10 @@ class GameScene : SKScene, SKPhysicsContactDelegate {
     
     func addScore(points : Int) {
         score += points
+        if( score > highscore ) { highscore = score }
+        
         scoreText.text = "Score: \(score)"
+        highscoreText.text = "High Score: \(highscore)"
     }
     
     func loadTransition() {
@@ -203,6 +217,7 @@ class GameScene : SKScene, SKPhysicsContactDelegate {
     
     func cleanGUI(){
         scoreText.removeFromParent()
+        highscoreText.removeFromParent()
         countdownText.removeFromParent()
         heroImage.removeFromParent()
         heroName.removeFromParent()
@@ -211,6 +226,7 @@ class GameScene : SKScene, SKPhysicsContactDelegate {
     
     func prepareGameGUI(){
         self.addChild(scoreText)
+        self.addChild(highscoreText)
         if( !infiniteMode ) {
             self.addChild(livesText)
             self.addChild(countdownText)
@@ -219,6 +235,7 @@ class GameScene : SKScene, SKPhysicsContactDelegate {
     
     func prepareTransitionGUI(){
         self.addChild(scoreText)
+        self.addChild(highscoreText)
         
         var hero : HeroInfo = Minigames.getInfo(nextLevel).hero
         
@@ -245,10 +262,12 @@ class GameScene : SKScene, SKPhysicsContactDelegate {
                 lives = lives - 1
 
                 if( lives >= 0 ) {
-                    livesText.text = "Lives: \(lives)"
                     runAction(SKAction.sequence([
                             SKAction.waitForDuration(1),
-                            SKAction.runBlock(goToNextLevel)
+                            SKAction.runBlock({
+                                self.livesText.text = "Lives: \(self.lives)"
+                                self.goToNextLevel()
+                            })
                         ]))
                 } else {
                     endGame(Minigames.MainGame)

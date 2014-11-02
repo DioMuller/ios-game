@@ -58,6 +58,7 @@
 		98E27DCA1A03001B00BF9DBF /* RunningHero.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E27DC91A03001B00BF9DBF /* RunningHero.swift */; };
 		98E27DCC1A03025700BF9DBF /* RunningScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E27DCB1A03025700BF9DBF /* RunningScene.swift */; };
 		98E7CACE1A06F481003362B8 /* GameOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E7CACD1A06F481003362B8 /* GameOptions.swift */; };
+		98E7CAD01A06F804003362B8 /* HighScores.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E7CACF1A06F804003362B8 /* HighScores.swift */; };
 		98E8D54A1A065E5700D2ADC9 /* spacehero_thumb.png in Resources */ = {isa = PBXBuildFile; fileRef = 98E8D5481A065E5700D2ADC9 /* spacehero_thumb.png */; };
 		98E8D54B1A065E5700D2ADC9 /* spacehero.png in Resources */ = {isa = PBXBuildFile; fileRef = 98E8D5491A065E5700D2ADC9 /* spacehero.png */; };
 		98E8D54D1A06601A00D2ADC9 /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E8D54C1A06601A00D2ADC9 /* Animation.swift */; };
@@ -140,6 +141,7 @@
 		98E27DC91A03001B00BF9DBF /* RunningHero.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RunningHero.swift; sourceTree = "<group>"; };
 		98E27DCB1A03025700BF9DBF /* RunningScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RunningScene.swift; sourceTree = "<group>"; };
 		98E7CACD1A06F481003362B8 /* GameOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOptions.swift; sourceTree = "<group>"; };
+		98E7CACF1A06F804003362B8 /* HighScores.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HighScores.swift; sourceTree = "<group>"; };
 		98E8D5481A065E5700D2ADC9 /* spacehero_thumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spacehero_thumb.png; sourceTree = "<group>"; };
 		98E8D5491A065E5700D2ADC9 /* spacehero.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spacehero.png; sourceTree = "<group>"; };
 		98E8D54C1A06601A00D2ADC9 /* Animation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
@@ -373,6 +375,7 @@
 			isa = PBXGroup;
 			children = (
 				98E7CACD1A06F481003362B8 /* GameOptions.swift */,
+				98E7CACF1A06F804003362B8 /* HighScores.swift */,
 			);
 			path = Persistence;
 			sourceTree = "<group>";
@@ -533,6 +536,7 @@
 				98D450ED1A045ACF0034A539 /* OptionsViewController.swift in Sources */,
 				98B1EB8319FC548A00717B81 /* GameViewController.swift in Sources */,
 				98CE752019FEECE700D98EAD /* Collisions.swift in Sources */,
+				98E7CAD01A06F804003362B8 /* HighScores.swift in Sources */,
 				98E7CACE1A06F481003362B8 /* GameOptions.swift in Sources */,
 				98EF19EB1A01A9D9001D9571 /* SpaceScene.swift in Sources */,
 				98EF19E71A01A3F9001D9571 /* SpaceHero.swift in Sources */,

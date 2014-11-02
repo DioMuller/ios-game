@@ -34,6 +34,7 @@ class GameViewController: UIViewController, GameDelegate {
     }
     
     func gameOver(gameType : Int, score: Int) {
+        HighScores().setHighscoreForGame(gameType, score: score)
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let viewController = storyboard.instantiateViewControllerWithIdentifier("TitleViewController") as TitleViewController
         navigationController?.pushViewController(viewController, animated: true)
