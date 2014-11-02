@@ -13,6 +13,16 @@ class TitleViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationController?.navigationBarHidden = true
+        self.navigationController?.interactivePopGestureRecognizer.enabled = false
+        
+        AudioManager.playMusic("PressStart")
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        self.navigationController?.navigationBarHidden = true
+        self.navigationController?.interactivePopGestureRecognizer.enabled = false
+        
         AudioManager.playMusic("PressStart")
     }
     

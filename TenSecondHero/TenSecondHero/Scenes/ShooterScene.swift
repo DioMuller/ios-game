@@ -82,9 +82,9 @@ public class ShooterScene : BaseScene {
         newObstacle.physicsBody?.collisionBitMask = Collisions.None
         
         if( distanceFromCenter != 0 ) {
-            newObstacle.physicsBody?.velocity = CGVectorMake(-distanceFromCenter / abs(distanceFromCenter) * 200, 1000)
+            newObstacle.physicsBody?.velocity = CGVectorMake(-distanceFromCenter / abs(distanceFromCenter) * 200, 800)
         } else {
-            newObstacle.physicsBody?.velocity = CGVectorMake(0, 1000)
+            newObstacle.physicsBody?.velocity = CGVectorMake(0, 800)
         }
         
         newObstacle.runAction(SKAction.sequence([

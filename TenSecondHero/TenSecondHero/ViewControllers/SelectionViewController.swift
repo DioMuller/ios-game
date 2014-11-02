@@ -16,6 +16,9 @@ class SelectionViewController : UITableViewController {
         super.viewDidLoad()
         
         AudioManager.playMusic("Credits")
+        
+        self.navigationController?.navigationBarHidden = false
+        self.navigationController?.interactivePopGestureRecognizer.enabled = false
     }
     
     override func viewWillDisappear(animated: Bool) {

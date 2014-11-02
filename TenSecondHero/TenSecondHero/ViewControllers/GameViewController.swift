@@ -14,6 +14,9 @@ class GameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationController?.navigationBarHidden = true
+        self.navigationController?.interactivePopGestureRecognizer.enabled = false
+        
         let currentView : SKView = self.view as SKView
         currentView.showsFPS = false
         

@@ -12,6 +12,7 @@ class OptionsViewController : UIViewController {
     
     @IBOutlet weak var sliderMusicVolume: UISlider!
     @IBOutlet weak var sliderSoundVolume: UISlider!
+    
 
     @IBAction func musicVolumeChanged(sender: UISlider) {
         AudioManager.musicVolume = sender.value
@@ -27,6 +28,9 @@ class OptionsViewController : UIViewController {
         
         sliderMusicVolume.value = AudioManager.musicVolume
         sliderSoundVolume.value = AudioManager.soundVolume
+        
+        self.navigationController?.navigationBarHidden = false
+        self.navigationController?.interactivePopGestureRecognizer.enabled = false
     }
     
     
