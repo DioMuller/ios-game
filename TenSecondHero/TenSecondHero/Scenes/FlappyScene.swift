@@ -66,7 +66,7 @@ public class FlappyScene : BaseScene {
     }
     
     func createObstacle() {
-        var newObstacle = SKSpriteNode(imageNamed: "hero_failure.png")
+        var newObstacle = SKSpriteNode(imageNamed: "plane.png")
         newObstacle.physicsBody = SKPhysicsBody(rectangleOfSize: newObstacle.size)
         
         let xPos : Int = (Int(size.width)) + Int(newObstacle.size.width)

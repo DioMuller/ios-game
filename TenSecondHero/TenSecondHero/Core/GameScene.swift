@@ -214,7 +214,14 @@ class GameScene : SKScene, SKPhysicsContactDelegate {
     }
     
     func chooseNext() {
-        nextLevel = random() % Minigames.Count
+        var x : Int = nextLevel
+        
+        // Guarantees no repeats
+        while ( x == nextLevel ) {
+            x = random() % Minigames.Count
+        }
+        
+        nextLevel = x
     }
     
     func cleanGUI(){

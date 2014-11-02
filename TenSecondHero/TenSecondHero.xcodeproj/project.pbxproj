@@ -61,6 +61,7 @@
 		98E8D54B1A065E5700D2ADC9 /* spacehero.png in Resources */ = {isa = PBXBuildFile; fileRef = 98E8D5491A065E5700D2ADC9 /* spacehero.png */; };
 		98E8D54D1A06601A00D2ADC9 /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E8D54C1A06601A00D2ADC9 /* Animation.swift */; };
 		98E8D54F1A066BC100D2ADC9 /* spaceenemy.png in Resources */ = {isa = PBXBuildFile; fileRef = 98E8D54E1A066BC100D2ADC9 /* spaceenemy.png */; };
+		98E8D5511A067E8300D2ADC9 /* plane.png in Resources */ = {isa = PBXBuildFile; fileRef = 98E8D5501A067E8300D2ADC9 /* plane.png */; };
 		98EF19E71A01A3F9001D9571 /* SpaceHero.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98EF19E61A01A3F9001D9571 /* SpaceHero.swift */; };
 		98EF19EB1A01A9D9001D9571 /* SpaceScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98EF19EA1A01A9D9001D9571 /* SpaceScene.swift */; };
 /* End PBXBuildFile section */
@@ -134,6 +135,7 @@
 		98E8D5491A065E5700D2ADC9 /* spacehero.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spacehero.png; sourceTree = "<group>"; };
 		98E8D54C1A06601A00D2ADC9 /* Animation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
 		98E8D54E1A066BC100D2ADC9 /* spaceenemy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spaceenemy.png; sourceTree = "<group>"; };
+		98E8D5501A067E8300D2ADC9 /* plane.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plane.png; sourceTree = "<group>"; };
 		98EF19E61A01A3F9001D9571 /* SpaceHero.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpaceHero.swift; sourceTree = "<group>"; };
 		98EF19EA1A01A9D9001D9571 /* SpaceScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpaceScene.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -211,6 +213,7 @@
 				13ECE1A819FC12BD008052A3 /* human.png */,
 				13ECE1A919FC12BD008052A3 /* piu01.png */,
 				13ECE1AA19FC12BD008052A3 /* piu02.png */,
+				98E8D5501A067E8300D2ADC9 /* plane.png */,
 				13ECE1AB19FC12BD008052A3 /* railroad.png */,
 				13ECE1AC19FC12BD008052A3 /* strongman01.png */,
 				13ECE1AD19FC12BD008052A3 /* thief01.png */,
@@ -454,6 +457,7 @@
 				13ECE19A19FC1253008052A3 /* title_screen.png in Resources */,
 				13ECE1B519FC12BD008052A3 /* exit.png in Resources */,
 				13ECE1B819FC12BD008052A3 /* girlcitizen02.png in Resources */,
+				98E8D5511A067E8300D2ADC9 /* plane.png in Resources */,
 				13ECE19B19FC1253008052A3 /* title.png in Resources */,
 				988BC99819FD070C007EA9B8 /* Credits.aifc in Resources */,
 				13ECE1BE19FC12BD008052A3 /* railroad.png in Resources */,
