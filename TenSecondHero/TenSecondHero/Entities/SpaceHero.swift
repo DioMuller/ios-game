@@ -12,13 +12,19 @@ enum ShootingState {
     case AwaitingStart, Idle, Moving, Dead
 }
 
-class ShootingHero : SKNode {
-    var sprite : SKSpriteNode = SKSpriteNode(imageNamed: "flyinghero.png")
+class SpaceHero : SKNode {
+    var sprite : SKSpriteNode = SKSpriteNode()
     var sound : SKAction = SKAction.playSoundFileNamed("drop.caf", waitForCompletion: false)
     var currentState : ShootingState = .AwaitingStart
     
     override init() {
         super.init()
+        
+        var animations : [SKTexture] = Animation.generateTextures("spacehero.png", xOffset: 1.0, yOffset: 0.5)
+        sprite = SKSpriteNode(texture: animations[0])
+        sprite.runAction(SKAction.repeatActionForever(
+                SKAction.animateWithTextures(animations, timePerFrame: 0.2)
+            ))
         
         addChild(sprite)
     }
@@ -101,7 +107,7 @@ class ShootingHero : SKNode {
     }
     
     func createShoot() {
-        (parent as ShootingScene).createShoot()
+        (parent as SpaceScene).createShoot()
         AudioManager.playSound("explosion")
     }
     

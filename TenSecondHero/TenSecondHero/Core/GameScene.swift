@@ -40,7 +40,7 @@ struct Minigames {
             case Flap:
                 return MinigameInfo(title: "Flap!", hero: HeroInfo(name: "Flying Hero", image: "flyinghero.png"))
             case Shoot:
-                return MinigameInfo(title: "Shoot!", hero: HeroInfo(name: "Space Hero", image: "flyinghero.png"))
+                return MinigameInfo(title: "Explore Space!", hero: HeroInfo(name: "Space Hero", image: "spacehero_thumb.png"))
             case Run:
                 return MinigameInfo(title: "Run!", hero: HeroInfo(name: "Running Hero", image: "strongman01.png"))
             default:
@@ -197,7 +197,7 @@ class GameScene : SKScene, SKPhysicsContactDelegate {
                 currentScene = FlappyScene()
                 break
             case Minigames.Shoot:
-                currentScene = ShootingScene()
+                currentScene = SpaceScene()
                 break
             case Minigames.Run:
                 currentScene = RunningScene()

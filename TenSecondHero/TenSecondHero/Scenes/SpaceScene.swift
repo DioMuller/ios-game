@@ -8,10 +8,12 @@
 
 import SpriteKit
 
-public class ShootingScene : BaseScene {
-    var hero : ShootingHero = ShootingHero()
+public class SpaceScene : BaseScene {
+    var hero : SpaceHero = SpaceHero()
     var background : ParallaxBackground = ParallaxBackground()
     var ground : SKSpriteNode = SKSpriteNode()
+    
+    var enemyTextures : [SKTexture] = []
     
     var size : CGSize = CGSize()
     
@@ -28,6 +30,11 @@ public class ShootingScene : BaseScene {
         
         size = self.scene!.size
         
+        enemyTextures = Animation.generateTextures("spaceenemy.png", xOffset: 1.0, yOffset: 0.25)
+        // Loop Texture
+        enemyTextures.append(enemyTextures[2])
+        enemyTextures.append(enemyTextures[1])
+        
         background = ParallaxBackground(imageNamed: "background_nightsky.png", size: self.scene!.size, velocity: 0.1)
         addChild(background)
         
@@ -35,7 +42,7 @@ public class ShootingScene : BaseScene {
         addChild(hero)
         
         self.runAction(SKAction.repeatActionForever(SKAction.sequence([
-            SKAction.runBlock(createObstacle),
+            SKAction.runBlock(createEnemy),
             SKAction.waitForDuration(3.5)
             ])))
     }
@@ -67,26 +74,27 @@ public class ShootingScene : BaseScene {
         }
     }
     
-    func createObstacle() {
-        var newObstacle = SKSpriteNode(imageNamed: "train.png")
-        newObstacle.physicsBody = SKPhysicsBody(rectangleOfSize: newObstacle.size)
+    func createEnemy() {
+        var newEnemy = SKSpriteNode(texture: enemyTextures[0])
+        newEnemy.physicsBody = SKPhysicsBody(rectangleOfSize: newEnemy.size)
         
-        let xPos : Int = (Int(size.width)) + Int(newObstacle.size.width)
+        let xPos : Int = (Int(size.width)) + Int(newEnemy.size.width)
         let yPos = Int(rand()) % Int(size.height)
         
-        newObstacle.position = CGPoint(
+        newEnemy.position = CGPoint(
             x: xPos,
             y: yPos
         )
         
-        newObstacle.runAction(SKAction.repeatActionForever(
+        /* Enemy Movement */
+        newEnemy.runAction(SKAction.repeatActionForever(
             SKAction.sequence([
                 SKAction.moveToX(-30, duration: 5.0),
                 SKAction.runBlock({
-                    let xPos : Int = (Int(self.size.width)) + Int(newObstacle.size.width)
+                    let xPos : Int = (Int(self.size.width)) + Int(newEnemy.size.width)
                     let yPos = Int(rand()) % Int(self.size.height)
                     
-                    newObstacle.position = CGPoint(
+                    newEnemy.position = CGPoint(
                         x: xPos,
                         y: yPos
                     )
@@ -94,12 +102,17 @@ public class ShootingScene : BaseScene {
                 ])
             ))
         
-        newObstacle.physicsBody = SKPhysicsBody(rectangleOfSize: newObstacle.size)
-        newObstacle.physicsBody?.categoryBitMask = Collisions.Obstacle
-        newObstacle.physicsBody?.affectedByGravity = false
-        newObstacle.physicsBody?.collisionBitMask = Collisions.None
+        /* Enemy Animation */
+        newEnemy.runAction(SKAction.repeatActionForever(
+                SKAction.animateWithTextures(enemyTextures, timePerFrame: 0.1)
+            ))
+        
+        newEnemy.physicsBody = SKPhysicsBody(rectangleOfSize: newEnemy.size)
+        newEnemy.physicsBody?.categoryBitMask = Collisions.Obstacle
+        newEnemy.physicsBody?.affectedByGravity = false
+        newEnemy.physicsBody?.collisionBitMask = Collisions.None
 
-        addChild(newObstacle)
+        addChild(newEnemy)
     }
     
     func createShoot() {

@@ -57,8 +57,12 @@
 		98D450ED1A045ACF0034A539 /* OptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D450EC1A045ACF0034A539 /* OptionsViewController.swift */; };
 		98E27DCA1A03001B00BF9DBF /* RunningHero.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E27DC91A03001B00BF9DBF /* RunningHero.swift */; };
 		98E27DCC1A03025700BF9DBF /* RunningScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E27DCB1A03025700BF9DBF /* RunningScene.swift */; };
-		98EF19E71A01A3F9001D9571 /* ShootingHero.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98EF19E61A01A3F9001D9571 /* ShootingHero.swift */; };
-		98EF19EB1A01A9D9001D9571 /* ShootingScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98EF19EA1A01A9D9001D9571 /* ShootingScene.swift */; };
+		98E8D54A1A065E5700D2ADC9 /* spacehero_thumb.png in Resources */ = {isa = PBXBuildFile; fileRef = 98E8D5481A065E5700D2ADC9 /* spacehero_thumb.png */; };
+		98E8D54B1A065E5700D2ADC9 /* spacehero.png in Resources */ = {isa = PBXBuildFile; fileRef = 98E8D5491A065E5700D2ADC9 /* spacehero.png */; };
+		98E8D54D1A06601A00D2ADC9 /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E8D54C1A06601A00D2ADC9 /* Animation.swift */; };
+		98E8D54F1A066BC100D2ADC9 /* spaceenemy.png in Resources */ = {isa = PBXBuildFile; fileRef = 98E8D54E1A066BC100D2ADC9 /* spaceenemy.png */; };
+		98EF19E71A01A3F9001D9571 /* SpaceHero.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98EF19E61A01A3F9001D9571 /* SpaceHero.swift */; };
+		98EF19EB1A01A9D9001D9571 /* SpaceScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98EF19EA1A01A9D9001D9571 /* SpaceScene.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -126,8 +130,12 @@
 		98D450EC1A045ACF0034A539 /* OptionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionsViewController.swift; sourceTree = "<group>"; };
 		98E27DC91A03001B00BF9DBF /* RunningHero.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RunningHero.swift; sourceTree = "<group>"; };
 		98E27DCB1A03025700BF9DBF /* RunningScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RunningScene.swift; sourceTree = "<group>"; };
-		98EF19E61A01A3F9001D9571 /* ShootingHero.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShootingHero.swift; sourceTree = "<group>"; };
-		98EF19EA1A01A9D9001D9571 /* ShootingScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShootingScene.swift; sourceTree = "<group>"; };
+		98E8D5481A065E5700D2ADC9 /* spacehero_thumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spacehero_thumb.png; sourceTree = "<group>"; };
+		98E8D5491A065E5700D2ADC9 /* spacehero.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spacehero.png; sourceTree = "<group>"; };
+		98E8D54C1A06601A00D2ADC9 /* Animation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
+		98E8D54E1A066BC100D2ADC9 /* spaceenemy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spaceenemy.png; sourceTree = "<group>"; };
+		98EF19E61A01A3F9001D9571 /* SpaceHero.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpaceHero.swift; sourceTree = "<group>"; };
+		98EF19EA1A01A9D9001D9571 /* SpaceScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpaceScene.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,7 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				98B1EB7E19FC4B3700717B81 /* FlappyScene.swift */,
-				98EF19EA1A01A9D9001D9571 /* ShootingScene.swift */,
+				98EF19EA1A01A9D9001D9571 /* SpaceScene.swift */,
 				98E27DCB1A03025700BF9DBF /* RunningScene.swift */,
 				131A78181A054F5100A73FD9 /* TransitionScene.swift */,
 			);
@@ -187,6 +195,8 @@
 			children = (
 				13ECE19D19FC12BD008052A3 /* bomb.png */,
 				13ECE19E19FC12BD008052A3 /* boycitizen01.png */,
+				98E8D5481A065E5700D2ADC9 /* spacehero_thumb.png */,
+				98E8D5491A065E5700D2ADC9 /* spacehero.png */,
 				13ECE19F19FC12BD008052A3 /* boycitizen02.png */,
 				13ECE1A019FC12BD008052A3 /* cage.png */,
 				13ECE1A119FC12BD008052A3 /* cat.png */,
@@ -194,6 +204,7 @@
 				13ECE1A319FC12BD008052A3 /* explosion.png */,
 				13ECE19C19FC12BD008052A3 /* flyinghero.png */,
 				13ECE1A419FC12BD008052A3 /* girlcitizen01.png */,
+				98E8D54E1A066BC100D2ADC9 /* spaceenemy.png */,
 				13ECE1A519FC12BD008052A3 /* girlcitizen02.png */,
 				13ECE1A619FC12BD008052A3 /* grandmacitizen01.png */,
 				13ECE1A719FC12BD008052A3 /* hero_failure.png */,
@@ -305,7 +316,7 @@
 			isa = PBXGroup;
 			children = (
 				988BC99D19FD0AC9007EA9B8 /* FlappyHero.swift */,
-				98EF19E61A01A3F9001D9571 /* ShootingHero.swift */,
+				98EF19E61A01A3F9001D9571 /* SpaceHero.swift */,
 				98E27DC91A03001B00BF9DBF /* RunningHero.swift */,
 			);
 			path = Entities;
@@ -318,6 +329,7 @@
 				13ECE19019FC0E19008052A3 /* BaseScene.swift */,
 				988BC9A519FDBA36007EA9B8 /* ParallaxBackground.swift */,
 				98D450EA1A0455A70034A539 /* AudioManager.swift */,
+				98E8D54C1A06601A00D2ADC9 /* Animation.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -413,6 +425,8 @@
 				988BC9A219FDB465007EA9B8 /* drop.caf in Resources */,
 				13ECE19919FC1253008052A3 /* background_nightsky.png in Resources */,
 				13ECE1B619FC12BD008052A3 /* explosion.png in Resources */,
+				98E8D54F1A066BC100D2ADC9 /* spaceenemy.png in Resources */,
+				98E8D54A1A065E5700D2ADC9 /* spacehero_thumb.png in Resources */,
 				13ECE1B219FC12BD008052A3 /* boycitizen02.png in Resources */,
 				13ECE1B319FC12BD008052A3 /* cage.png in Resources */,
 				13ECE1BA19FC12BD008052A3 /* hero_failure.png in Resources */,
@@ -421,6 +435,7 @@
 				988BC99919FD070C007EA9B8 /* PressStart.aifc in Resources */,
 				13ECE1B119FC12BD008052A3 /* boycitizen01.png in Resources */,
 				13ECE1C119FC12BD008052A3 /* train.png in Resources */,
+				98E8D54B1A065E5700D2ADC9 /* spacehero.png in Resources */,
 				13ECE1B019FC12BD008052A3 /* bomb.png in Resources */,
 				13ECE1BC19FC12BD008052A3 /* piu01.png in Resources */,
 				13ECE1AF19FC12BD008052A3 /* flyinghero.png in Resources */,
@@ -463,6 +478,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				988BC9A619FDBA36007EA9B8 /* ParallaxBackground.swift in Sources */,
+				98E8D54D1A06601A00D2ADC9 /* Animation.swift in Sources */,
 				13ECE18E19FC0BAD008052A3 /* GameScene.swift in Sources */,
 				9861405C19EB2B7000AF733A /* TitleViewController.swift in Sources */,
 				98E27DCA1A03001B00BF9DBF /* RunningHero.swift in Sources */,
@@ -475,8 +491,8 @@
 				98D450ED1A045ACF0034A539 /* OptionsViewController.swift in Sources */,
 				98B1EB8319FC548A00717B81 /* GameViewController.swift in Sources */,
 				98CE752019FEECE700D98EAD /* Collisions.swift in Sources */,
-				98EF19EB1A01A9D9001D9571 /* ShootingScene.swift in Sources */,
-				98EF19E71A01A3F9001D9571 /* ShootingHero.swift in Sources */,
+				98EF19EB1A01A9D9001D9571 /* SpaceScene.swift in Sources */,
+				98EF19E71A01A3F9001D9571 /* SpaceHero.swift in Sources */,
 				13ECE19119FC0E19008052A3 /* BaseScene.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
