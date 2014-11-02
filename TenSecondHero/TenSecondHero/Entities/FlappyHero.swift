@@ -13,7 +13,7 @@ enum FlappyState {
 }
 
 class FlappyHero : SKNode {
-    var sprite : SKSpriteNode = SKSpriteNode(imageNamed: "10sechero.png")
+    var sprite : SKSpriteNode = SKSpriteNode(imageNamed: "flyinghero.png")
     var currentState : FlappyState = .AwaitingStart
     
     override init() {

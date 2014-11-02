@@ -13,7 +13,7 @@ enum ShootingState {
 }
 
 class ShootingHero : SKNode {
-    var sprite : SKSpriteNode = SKSpriteNode(imageNamed: "10sechero.png")
+    var sprite : SKSpriteNode = SKSpriteNode(imageNamed: "flyinghero.png")
     var sound : SKAction = SKAction.playSoundFileNamed("drop.caf", waitForCompletion: false)
     var currentState : ShootingState = .AwaitingStart
     
