@@ -57,6 +57,9 @@ class GameScene : SKScene, SKPhysicsContactDelegate {
     var scoreText : SKLabelNode = SKLabelNode(fontNamed: "Chalkduster")
     var countdownText : SKLabelNode = SKLabelNode(fontNamed: "Chalkduster")
     
+    var heroName : SKLabelNode = SKLabelNode(fontNamed: "Chalkduster")
+    var heroImage : SKSpriteNode = SKSpriteNode()
+    
     // Game State Helpers
     var score : Int = 0
     var nextLevel : Int = 0
@@ -72,12 +75,23 @@ class GameScene : SKScene, SKPhysicsContactDelegate {
             if( countdownTimer > 5 ) {
                 countdownText.fontColor = UIColor.whiteColor()
                 countdownText.fontSize = 32
+                countdownText.removeAllActions()
             } else if ( countdownTimer > 3 ) {
                 countdownText.fontColor = UIColor.yellowColor()
                 countdownText.fontSize = 46
+                countdownText.removeAllActions()
             } else {
                 countdownText.fontColor = UIColor.redColor()
                 countdownText.fontSize = 62
+                
+                if( !countdownText.hasActions() ) {
+                    countdownText.runAction(SKAction.repeatActionForever(
+                        SKAction.sequence([
+                                SKAction.scaleTo(1.5, duration: 0.3),
+                                SKAction.scaleTo(1.0, duration: 0.3)
+                            ])
+                        ))
+                }
             }
             
             countdownText.text = "\(countdownTimer)"
@@ -102,11 +116,18 @@ class GameScene : SKScene, SKPhysicsContactDelegate {
         scoreText.fontColor = UIColor.redColor()
         self.addChild(scoreText)
         
-        /* Score Text */
+        /* Countdown Text */
         countdownText.text = "\(countdownTimer)"
         countdownText.position = CGPoint(x: self.frame.width - 40, y: 20)
         countdownText.fontColor = UIColor.redColor()
         self.addChild(countdownText)
+        
+        /* Hero Name */
+        heroName.text = "Hero"
+        heroName.position = CGPoint(x: self.frame.width - 100, y: 20)
+        heroName.fontColor = UIColor(red: 1, green: 0.5, blue: 0.25, alpha: 1)
+        heroName.fontSize = 24
+        self.addChild(heroName)
         
         /* Level Selection Loop */
         runAction(SKAction.repeatActionForever(SKAction.sequence([
@@ -199,6 +220,8 @@ class GameScene : SKScene, SKPhysicsContactDelegate {
     func cleanGUI(){
         scoreText.removeFromParent()
         countdownText.removeFromParent()
+        heroImage.removeFromParent()
+        heroName.removeFromParent()
     }
     
     func prepareGameGUI(){
@@ -208,6 +231,17 @@ class GameScene : SKScene, SKPhysicsContactDelegate {
     
     func prepareTransitionGUI(){
         self.addChild(scoreText)
+        
+        var hero : HeroInfo = Minigames.getInfo(nextLevel).hero
+        
+        heroName.text = hero.name
+        
+        /* Hero Image */
+        heroImage = SKSpriteNode(imageNamed: hero.image)
+        heroImage.position = CGPoint(x: self.frame.width - 100, y: 50)
+        
+        self.addChild(heroName)
+        self.addChild(heroImage)
     }
     
 }
