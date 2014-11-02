@@ -43,5 +43,11 @@ class SelectionViewController : UITableViewController {
         
         return cell!
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let index = tableView.indexPathForSelectedRow()
+        let gameController = (segue.destinationViewController as GameViewController)
+        gameController.index = index!.row
+    }
 
 }

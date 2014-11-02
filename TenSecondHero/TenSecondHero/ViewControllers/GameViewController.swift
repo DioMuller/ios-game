@@ -10,6 +10,8 @@ import UIKit
 import SpriteKit
 
 class GameViewController: UIViewController {
+    var scene : GameScene?
+    var index : Int = -1
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,7 +22,8 @@ class GameViewController: UIViewController {
         let currentView : SKView = self.view as SKView
         currentView.showsFPS = false
         
-        let scene : GameScene = GameScene(size: currentView.bounds.size)
+        scene = GameScene(size: currentView.bounds.size)
+        scene?.nextLevel = index
         currentView.presentScene(scene)
     }
     
@@ -28,6 +31,5 @@ class GameViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
     
 }

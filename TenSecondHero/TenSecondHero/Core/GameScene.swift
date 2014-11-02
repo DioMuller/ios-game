@@ -22,9 +22,11 @@ class GameScene : SKScene, SKPhysicsContactDelegate {
     
     // Game State Helpers
     var score : Int = 0
-    var nextLevel : Int = 0
+    var nextLevel : Int = -1
     private var countdownTimer : Int = 0
     private var levelEnded : Bool = false
+    
+    private var infiniteMode : Bool = false
     
     
     // Countdown Property
@@ -90,8 +92,13 @@ class GameScene : SKScene, SKPhysicsContactDelegate {
         heroName.fontSize = 24
         self.addChild(heroName)
         
-        /* Level Selection Loop */
-        goToNextLevel()
+        if( nextLevel == -1 ) {
+            /* Level Selection Loop */
+            goToNextLevel()
+        } else {
+            /* Play Level on Infinite Mode */
+            infiniteModeAtLevel(nextLevel)
+        }
     }
     
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
@@ -180,7 +187,7 @@ class GameScene : SKScene, SKPhysicsContactDelegate {
     
     func prepareGameGUI(){
         self.addChild(scoreText)
-        self.addChild(countdownText)
+        if( !infiniteMode ) { self.addChild(countdownText) }
     }
     
     func prepareTransitionGUI(){
@@ -200,14 +207,19 @@ class GameScene : SKScene, SKPhysicsContactDelegate {
     
     func endLevel() {
         if( !levelEnded ){
-            removeAllActions()
-        
-            runAction(SKAction.sequence([
-                    SKAction.waitForDuration(1),
-                    SKAction.runBlock(goToNextLevel)
-            ]))
             
-            levelEnded = true
+            if( infiniteMode ) {
+                // TODO: Go Back to Title Screen
+            } else {
+                removeAllActions()
+        
+                runAction(SKAction.sequence([
+                        SKAction.waitForDuration(1),
+                        SKAction.runBlock(goToNextLevel)
+                    ]))
+            
+                levelEnded = true
+            }
         }
     }
     
@@ -230,6 +242,18 @@ class GameScene : SKScene, SKPhysicsContactDelegate {
                         ]), count: 10)
                 ])
             ])))
+    }
+    
+    func infiniteModeAtLevel(level : Int) {
+        nextLevel = level
+        infiniteMode = true
+        levelEnded = false
+        
+        runAction(SKAction.sequence([
+            SKAction.runBlock(loadTransition),
+            SKAction.waitForDuration(3.0),
+            SKAction.runBlock(loadNext)
+            ]))
     }
     
 }

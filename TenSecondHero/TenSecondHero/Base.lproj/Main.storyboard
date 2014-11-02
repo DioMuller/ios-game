@@ -120,6 +120,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="7wI-ZS-bH2" kind="show" id="MoG-AH-rcH"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -130,7 +133,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bli-gq-TmD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1366" y="1174"/>
+            <point key="canvasLocation" x="1418" y="1172"/>
         </scene>
         <!--Options-->
         <scene sceneID="BgU-OK-fuC">
@@ -188,4 +191,7 @@
     <resources>
         <image name="title_screen.png" width="640" height="480"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="MoG-AH-rcH"/>
+    </inferredMetricsTieBreakers>
 </document>
