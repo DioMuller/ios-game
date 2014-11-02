@@ -13,11 +13,17 @@ enum RunningState {
 }
 
 class RunningHero : SKNode {
-    var sprite : SKSpriteNode = SKSpriteNode(imageNamed: "strongman01.png")
+    var sprite : SKSpriteNode = SKSpriteNode()
     var currentState : RunningState = .AwaitingStart
     
     override init() {
         super.init()
+        
+        var animations : [SKTexture] = Animation.generateTextures("runningirl.png", xOffset: 0.5, yOffset: 0.5)
+        sprite = SKSpriteNode(texture: animations[0])
+        sprite.runAction(SKAction.repeatActionForever(
+            SKAction.animateWithTextures(animations, timePerFrame: 0.1)
+            ))
         
         self.physicsBody = SKPhysicsBody(rectangleOfSize: sprite.size, center: sprite.position)
         self.physicsBody?.affectedByGravity = true

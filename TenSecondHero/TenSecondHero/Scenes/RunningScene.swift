@@ -12,7 +12,7 @@ public class RunningScene : BaseScene {
     var hero : RunningHero = RunningHero()
     var background : ParallaxBackground = ParallaxBackground()
     var ground : SKSpriteNode = SKSpriteNode()
-    var obstacles : [SKSpriteNode] = []
+    var enemyTextures : [SKTexture] = []
     
     var size : CGSize = CGSize()
     
@@ -28,6 +28,7 @@ public class RunningScene : BaseScene {
         super.onStartScene()
         
         size = self.scene!.size
+        enemyTextures = Animation.generateTextures("dog.png", xOffset: 1.0, yOffset: 0.5)
         
         background = ParallaxBackground(imageNamed: "background_city01.png", size: self.scene!.size, velocity: 0.1)
         addChild(background)
@@ -66,7 +67,8 @@ public class RunningScene : BaseScene {
     }
     
     func createObstacle() {
-        var newObstacle = SKSpriteNode(imageNamed: "thief01")
+        var newObstacle = SKSpriteNode(texture: enemyTextures[0])
+        
         newObstacle.physicsBody = SKPhysicsBody(rectangleOfSize: newObstacle.size)
         
         let xPos : Int = (Int(size.width)) + Int(newObstacle.size.width)
@@ -74,7 +76,7 @@ public class RunningScene : BaseScene {
         
         newObstacle.position = CGPoint(
             x: xPos,
-            y: 50
+            y: 35
         )
         
         newObstacle.runAction(SKAction.repeatActionForever(
@@ -92,18 +94,22 @@ public class RunningScene : BaseScene {
                     
                     newObstacle.position = CGPoint(
                         x: xPos,
-                        y: 50
+                        y: 35
                     )
                 })
                 ])
+            ))
+        
+        /* Enemy Animation */
+        newObstacle.runAction(SKAction.repeatActionForever(
+            SKAction.animateWithTextures(enemyTextures, timePerFrame: 0.1)
             ))
         
         newObstacle.physicsBody = SKPhysicsBody(rectangleOfSize: newObstacle.size)
         newObstacle.physicsBody?.categoryBitMask = Collisions.Obstacle
         newObstacle.physicsBody?.affectedByGravity = false
         newObstacle.physicsBody?.collisionBitMask = Collisions.None
-        
-        obstacles.append(newObstacle)
+
         addChild(newObstacle)
     }
 }
