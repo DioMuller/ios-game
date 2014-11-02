@@ -23,7 +23,7 @@
         <!--Ten Second Hero-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController title="Ten Second Hero" id="BYZ-38-t0r" customClass="TitleViewController" customModule="TenSecondHero" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TitleViewController" title="Ten Second Hero" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="TitleViewController" customModule="TenSecondHero" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -192,6 +192,6 @@
         <image name="title_screen.png" width="640" height="480"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="MoG-AH-rcH"/>
+        <segue reference="GVM-Ky-fcC"/>
     </inferredMetricsTieBreakers>
 </document>

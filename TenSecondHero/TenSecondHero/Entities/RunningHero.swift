@@ -46,7 +46,7 @@ class RunningHero : SKNode {
         }
         if( currentState == .Running ) {
             self.physicsBody?.velocity = CGVectorMake(0, 0)
-            self.physicsBody?.applyImpulse(CGVector(dx: 0.0, dy: 20.0))
+            self.physicsBody?.applyImpulse(CGVector(dx: 0.0, dy: 25.0))
             AudioManager.playSound("drop")
             self.currentState = .Jumping
         }

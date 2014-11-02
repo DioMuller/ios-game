@@ -31,6 +31,8 @@ struct MinigameInfo {
 
 
 struct Minigames {
+    static var MainGame : Int = -1
+    
     static var Flap : Int = 0
     static var Space : Int = 1
     static var Run : Int = 2

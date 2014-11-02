@@ -9,7 +9,12 @@
 
 import SpriteKit
 
+protocol GameDelegate {
+    func gameOver(level : Int, score : Int)
+}
+
 class GameScene : SKScene, SKPhysicsContactDelegate {
+
     // Current Scene displayed
     var currentScene : BaseScene = BaseScene()
     
@@ -26,8 +31,11 @@ class GameScene : SKScene, SKPhysicsContactDelegate {
     private var countdownTimer : Int = 0
     private var levelEnded : Bool = false
     
+    private var lives : Int = 3
+    
     private var infiniteMode : Bool = false
     
+    var gameDelegate : GameDelegate?
     
     // Countdown Property
     var countdown : Int {
@@ -59,6 +67,14 @@ class GameScene : SKScene, SKPhysicsContactDelegate {
             
             countdownText.text = "\(countdownTimer)"
         }
+    }
+    
+    override init(size : CGSize) {
+        super.init(size: size)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     override func didMoveToView(view: SKView) {
@@ -207,20 +223,41 @@ class GameScene : SKScene, SKPhysicsContactDelegate {
     
     func endLevel() {
         if( !levelEnded ){
+            levelEnded = true
             
             if( infiniteMode ) {
-                // TODO: Go Back to Title Screen
+                endGame( nextLevel )
             } else {
                 removeAllActions()
-        
-                runAction(SKAction.sequence([
-                        SKAction.waitForDuration(1),
-                        SKAction.runBlock(goToNextLevel)
-                    ]))
-            
-                levelEnded = true
+                
+                lives = lives - 1
+
+                if( lives >= 0 ) {
+                    runAction(SKAction.sequence([
+                            SKAction.waitForDuration(1),
+                            SKAction.runBlock(goToNextLevel)
+                        ]))
+                } else {
+                    endGame(Minigames.MainGame)
+                }
             }
         }
+    }
+    
+    func endGame(gameType: Int) {
+        
+        nextLevel = gameType
+
+        var action : SKAction = SKAction.sequence([
+            SKAction.waitForDuration(1.0),
+            SKAction.runBlock(goToGameOver)
+            ])
+        
+        runAction(action)
+    }
+    
+    func goToGameOver() {
+        self.gameDelegate?.gameOver(self.nextLevel, score: self.score)
     }
     
     func goToNextLevel() {

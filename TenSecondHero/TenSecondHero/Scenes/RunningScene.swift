@@ -82,13 +82,13 @@ public class RunningScene : BaseScene {
         
         newObstacle.runAction(SKAction.repeatActionForever(
             SKAction.sequence([
-                SKAction.moveToX(80.0, duration: 3.0),
+                SKAction.moveToX(80.0, duration: 2.0),
                 SKAction.runBlock({
                     if ( self.hero.currentState == RunningState.Running || self.hero.currentState == RunningState.Jumping ) {
                         self.rootParent?.addScore(1)
                     }
                 }),
-                SKAction.moveToX(-30, duration: 0.7),
+                SKAction.moveToX(-30, duration: 0.5),
                 SKAction.runBlock({
                     let xPos : Int = (Int(self.size.width)) + Int(newObstacle.size.width)
                     let yPos = Int(rand()) % Int(self.size.height)
