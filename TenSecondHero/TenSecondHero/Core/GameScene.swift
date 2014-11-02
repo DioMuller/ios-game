@@ -20,6 +20,7 @@ class GameScene : SKScene, SKPhysicsContactDelegate {
     
     // GUI Items
     var scoreText : SKLabelNode = SKLabelNode(fontNamed: "Chalkduster")
+    var livesText : SKLabelNode = SKLabelNode(fontNamed: "Chalkduster")
     var countdownText : SKLabelNode = SKLabelNode(fontNamed: "Chalkduster")
     
     var heroName : SKLabelNode = SKLabelNode(fontNamed: "Chalkduster")
@@ -91,9 +92,15 @@ class GameScene : SKScene, SKPhysicsContactDelegate {
         
         /* Score Text */
         scoreText.text = "Score: \(score)"
-        scoreText.position = CGPoint(x: 100, y: 20)
+        scoreText.position = CGPoint(x: 100, y: size.height - 30)
         scoreText.fontColor = UIColor.redColor()
         self.addChild(scoreText)
+        
+        /* Lives Text */
+        livesText.text = "Lives: \(lives)"
+        livesText.position = CGPoint(x: size.width - 100, y: size.height - 30)
+        livesText.fontColor = UIColor.redColor()
+        self.addChild(livesText)
         
         /* Countdown Text */
         countdownText.text = "\(countdownTimer)"
@@ -199,11 +206,15 @@ class GameScene : SKScene, SKPhysicsContactDelegate {
         countdownText.removeFromParent()
         heroImage.removeFromParent()
         heroName.removeFromParent()
+        livesText.removeFromParent()
     }
     
     func prepareGameGUI(){
         self.addChild(scoreText)
-        if( !infiniteMode ) { self.addChild(countdownText) }
+        if( !infiniteMode ) {
+            self.addChild(livesText)
+            self.addChild(countdownText)
+        }
     }
     
     func prepareTransitionGUI(){
@@ -219,6 +230,7 @@ class GameScene : SKScene, SKPhysicsContactDelegate {
         
         self.addChild(heroName)
         self.addChild(heroImage)
+        self.addChild(livesText)
     }
     
     func endLevel() {
@@ -233,6 +245,7 @@ class GameScene : SKScene, SKPhysicsContactDelegate {
                 lives = lives - 1
 
                 if( lives >= 0 ) {
+                    livesText.text = "Lives: \(lives)"
                     runAction(SKAction.sequence([
                             SKAction.waitForDuration(1),
                             SKAction.runBlock(goToNextLevel)
