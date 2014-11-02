@@ -12,8 +12,8 @@ public struct AudioManager {
     static var musicPlayer : AVAudioPlayer?
     static var soundPlayer : AVAudioPlayer?
     
-    static var internalMusicVolume : Float = 1.0
-    static var internalSoundVolume : Float = 1.0
+    static var internalMusicVolume : Float = GameOptions().musicVolume
+    static var internalSoundVolume : Float = GameOptions().soundVolume
     
     static var musicVolume : Float {
         get {
@@ -22,6 +22,7 @@ public struct AudioManager {
         set(value) {
             musicPlayer?.volume = value
             internalMusicVolume = value
+            GameOptions().musicVolume = value
         }
     }
     
@@ -32,6 +33,7 @@ public struct AudioManager {
         set(value) {
             soundPlayer?.volume = value
             internalSoundVolume = value
+            GameOptions().soundVolume = value
         }
     }
 
