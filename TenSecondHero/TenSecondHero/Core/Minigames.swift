@@ -50,6 +50,8 @@ struct Minigames {
                 for( i = 0; i < Count; i++ ) {
                      internalList.append(Minigames.getInfo(i))
                 }
+                
+                initialized = true
             }
             
             return internalList
