@@ -15,7 +15,7 @@ class GameViewController: UIViewController {
         super.viewDidLoad()
         
         let currentView : SKView = self.view as SKView
-        currentView.showsFPS = true
+        currentView.showsFPS = false
         
         let scene : GameScene = GameScene(size: currentView.bounds.size)
         currentView.presentScene(scene)

@@ -66,6 +66,7 @@
 		98E8D5551A068E5300D2ADC9 /* runningirl_thumb.png in Resources */ = {isa = PBXBuildFile; fileRef = 98E8D5541A068E5300D2ADC9 /* runningirl_thumb.png */; };
 		98E8D5571A068EA000D2ADC9 /* Minigames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E8D5561A068EA000D2ADC9 /* Minigames.swift */; };
 		98E8D5591A06933300D2ADC9 /* dog.png in Resources */ = {isa = PBXBuildFile; fileRef = 98E8D5581A06933300D2ADC9 /* dog.png */; };
+		98E8D55B1A06995000D2ADC9 /* SelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E8D55A1A06995000D2ADC9 /* SelectionViewController.swift */; };
 		98EF19E71A01A3F9001D9571 /* SpaceHero.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98EF19E61A01A3F9001D9571 /* SpaceHero.swift */; };
 		98EF19EB1A01A9D9001D9571 /* SpaceScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98EF19EA1A01A9D9001D9571 /* SpaceScene.swift */; };
 /* End PBXBuildFile section */
@@ -144,6 +145,7 @@
 		98E8D5541A068E5300D2ADC9 /* runningirl_thumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = runningirl_thumb.png; sourceTree = "<group>"; };
 		98E8D5561A068EA000D2ADC9 /* Minigames.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Minigames.swift; sourceTree = "<group>"; };
 		98E8D5581A06933300D2ADC9 /* dog.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dog.png; sourceTree = "<group>"; };
+		98E8D55A1A06995000D2ADC9 /* SelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectionViewController.swift; sourceTree = "<group>"; };
 		98EF19E61A01A3F9001D9571 /* SpaceHero.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpaceHero.swift; sourceTree = "<group>"; };
 		98EF19EA1A01A9D9001D9571 /* SpaceScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpaceScene.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -322,6 +324,7 @@
 				9861405B19EB2B7000AF733A /* TitleViewController.swift */,
 				98B1EB8219FC548A00717B81 /* GameViewController.swift */,
 				98D450EC1A045ACF0034A539 /* OptionsViewController.swift */,
+				98E8D55A1A06995000D2ADC9 /* SelectionViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -496,6 +499,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				98E8D55B1A06995000D2ADC9 /* SelectionViewController.swift in Sources */,
 				988BC9A619FDBA36007EA9B8 /* ParallaxBackground.swift in Sources */,
 				98E8D54D1A06601A00D2ADC9 /* Animation.swift in Sources */,
 				13ECE18E19FC0BAD008052A3 /* GameScene.swift in Sources */,

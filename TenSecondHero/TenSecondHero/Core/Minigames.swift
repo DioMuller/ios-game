@@ -37,6 +37,38 @@ struct Minigames {
     
     static var Count = 3
     
+    static var initialized : Bool = false
+    static var internalList : [MinigameInfo] = []
+    
+    static var list : [MinigameInfo] {
+        get {
+            if( !initialized ) {
+                var i : Int = 0
+                for( i = 0; i < Count; i++ ) {
+                     internalList.append(Minigames.getInfo(i))
+                }
+            }
+            
+            return internalList
+        }
+    }
+    
+    static var names :[String] {
+        var namelist : [String] = []
+        
+        for info : MinigameInfo in Minigames.list {
+            namelist.append(info.title)
+        }
+        
+        return namelist
+    }
+    
+    static var error : MinigameInfo {
+        get {
+            return MinigameInfo(title: "Error!", hero: HeroInfo(name: "Wrong Hero", image: "hero_failure.png"))
+        }
+    }
+    
     static func getInfo(type : Int ) -> MinigameInfo {
         switch(type) {
         case Flap:
@@ -46,7 +78,19 @@ struct Minigames {
         case Run:
             return MinigameInfo(title: "Run!", hero: HeroInfo(name: "Running Hero", image: "runningirl_thumb.png"))
         default:
-            return MinigameInfo(title: "Error!", hero: HeroInfo(name: "Wrong Hero", image: "hero_failure.png"))
+            return error
         }
     }
+    
+    static func getInfo(name : String) -> MinigameInfo {
+        for info : MinigameInfo in Minigames.list {
+            if( name == info.title ){
+                return info
+            }
+        }
+        
+        return error
+    }
+    
+    
 }
