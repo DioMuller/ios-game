@@ -62,6 +62,7 @@ public class RunningScene : BaseScene {
             } else {
                 hero.die()
                 background.stop()
+                endLevel()
             }
         }
     }
@@ -83,8 +84,8 @@ public class RunningScene : BaseScene {
             SKAction.sequence([
                 SKAction.moveToX(80.0, duration: 3.0),
                 SKAction.runBlock({
-                    if ( self.hero.currentState == RunningState.Running ) {
-                        self.rootParent.addScore(1)
+                    if ( self.hero.currentState == RunningState.Running || self.hero.currentState == RunningState.Jumping ) {
+                        self.rootParent?.addScore(1)
                     }
                 }),
                 SKAction.moveToX(-30, duration: 0.7),

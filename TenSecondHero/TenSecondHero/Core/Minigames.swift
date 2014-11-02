@@ -32,10 +32,11 @@ struct MinigameInfo {
 
 struct Minigames {
     static var Flap : Int = 0
-    static var Shoot : Int = 1
+    static var Space : Int = 1
     static var Run : Int = 2
+    static var Shoot : Int = 3
     
-    static var Count = 3
+    static var Count = 4
     
     static var initialized : Bool = false
     static var internalList : [MinigameInfo] = []
@@ -72,11 +73,13 @@ struct Minigames {
     static func getInfo(type : Int ) -> MinigameInfo {
         switch(type) {
         case Flap:
-            return MinigameInfo(title: "Flap!", hero: HeroInfo(name: "Flying Hero", image: "flyinghero.png"))
-        case Shoot:
-            return MinigameInfo(title: "Explore Space!", hero: HeroInfo(name: "Space Hero", image: "spacehero_thumb.png"))
+            return MinigameInfo(title: "Flap!", hero: HeroInfo(name: "Capeman", image: "flyinghero.png"))
+        case Space:
+            return MinigameInfo(title: "Explore Space!", hero: HeroInfo(name: "Captain Space", image: "spacehero_thumb.png"))
         case Run:
-            return MinigameInfo(title: "Run!", hero: HeroInfo(name: "Running Hero", image: "runningirl_thumb.png"))
+            return MinigameInfo(title: "Run!", hero: HeroInfo(name: "Runningirl", image: "runningirl_thumb.png"))
+        case Shoot:
+            return MinigameInfo(title: "Shoot!", hero: HeroInfo(name: "El Bandido", image: "thief01.png"))
         default:
             return error
         }

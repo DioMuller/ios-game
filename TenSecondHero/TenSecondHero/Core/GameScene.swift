@@ -24,6 +24,7 @@ class GameScene : SKScene, SKPhysicsContactDelegate {
     var score : Int = 0
     var nextLevel : Int = 0
     private var countdownTimer : Int = 0
+    private var levelEnded : Bool = false
     
     
     // Countdown Property
@@ -90,43 +91,27 @@ class GameScene : SKScene, SKPhysicsContactDelegate {
         self.addChild(heroName)
         
         /* Level Selection Loop */
-        runAction(SKAction.repeatActionForever(SKAction.sequence([
-            SKAction.runBlock({
-                self.chooseNext()
-                self.loadTransition()
-            }),
-            SKAction.waitForDuration(3.0),
-            SKAction.runBlock({self.loadNext()}),
-            SKAction.runBlock({self.countdown = 10}),
-            SKAction.group([
-                SKAction.waitForDuration(10.0),
-                SKAction.repeatAction(
-                    SKAction.sequence([
-                        SKAction.waitForDuration(1.0),
-                        SKAction.runBlock({self.countdown = self.countdown - 1})
-                    ]), count: 10)
-            ])
-        ])))
+        goToNextLevel()
     }
     
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
-        currentScene.touchesBegan(touches, withEvent: event)
+        if(!levelEnded) { currentScene.touchesBegan(touches, withEvent: event) }
     }
     
     override func touchesMoved(touches: NSSet, withEvent event: UIEvent) {
-        currentScene.touchesMoved(touches, withEvent: event)
+        if(!levelEnded) { currentScene.touchesMoved(touches, withEvent: event) }
     }
     
     override func touchesEnded(touches: NSSet, withEvent event: UIEvent) {
-        currentScene.touchesEnded(touches, withEvent: event)
+        if(!levelEnded) { currentScene.touchesEnded(touches, withEvent: event) }
     }
     
     override func touchesCancelled(touches: NSSet!, withEvent event: UIEvent!) {
-        currentScene.touchesCancelled(touches, withEvent: event)
+        if(!levelEnded) { currentScene.touchesCancelled(touches, withEvent: event) }
     }
     
     func didBeginContact(contact: SKPhysicsContact) {
-        currentScene.didBeginContact(contact)
+        if(!levelEnded) { currentScene.didBeginContact(contact) }
     }
     
     func addScore(points : Int) {
@@ -156,12 +141,14 @@ class GameScene : SKScene, SKPhysicsContactDelegate {
             case Minigames.Flap:
                 currentScene = FlappyScene()
                 break
-            case Minigames.Shoot:
+            case Minigames.Space:
                 currentScene = SpaceScene()
                 break
             case Minigames.Run:
                 currentScene = RunningScene()
                 break
+            case Minigames.Shoot:
+                currentScene = ShooterScene()
             default:
                 chooseNext()
                 loadNext()
@@ -209,6 +196,40 @@ class GameScene : SKScene, SKPhysicsContactDelegate {
         
         self.addChild(heroName)
         self.addChild(heroImage)
+    }
+    
+    func endLevel() {
+        if( !levelEnded ){
+            removeAllActions()
+        
+            runAction(SKAction.sequence([
+                    SKAction.waitForDuration(1),
+                    SKAction.runBlock(goToNextLevel)
+            ]))
+            
+            levelEnded = true
+        }
+    }
+    
+    func goToNextLevel() {
+        levelEnded = false
+        runAction(SKAction.repeatActionForever(SKAction.sequence([
+            SKAction.runBlock({
+                self.chooseNext()
+                self.loadTransition()
+            }),
+            SKAction.waitForDuration(3.0),
+            SKAction.runBlock({self.loadNext()}),
+            SKAction.runBlock({self.countdown = 10}),
+            SKAction.group([
+                SKAction.waitForDuration(10.0),
+                SKAction.repeatAction(
+                    SKAction.sequence([
+                        SKAction.waitForDuration(1.0),
+                        SKAction.runBlock({self.countdown = self.countdown - 1})
+                        ]), count: 10)
+                ])
+            ])))
     }
     
 }

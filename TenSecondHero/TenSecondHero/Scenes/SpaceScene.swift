@@ -68,9 +68,9 @@ public class SpaceScene : BaseScene {
         contact.bodyB.node?.removeFromParent()
         
         if( contact.bodyA.categoryBitMask == Collisions.Player || contact.bodyB.categoryBitMask == Collisions.Player ) {
-            // TODO: End Game
+            endLevel()
         } else {
-            self.rootParent.addScore(1)
+            self.rootParent?.addScore(1)
         }
     }
     

@@ -20,9 +20,9 @@ public class BaseScene : SKNode {
         get { return "WeDontNeedAHero" }
     }
     
-    var rootParent : GameScene {
+    var rootParent : GameScene? {
         get {
-            return self.parent as GameScene
+            return self.parent as GameScene?
         }
     }
 
@@ -38,5 +38,9 @@ public class BaseScene : SKNode {
     }
     
     func didBeginContact(contact: SKPhysicsContact) {
+    }
+    
+    func endLevel() {
+        rootParent?.endLevel()
     }
 }

@@ -67,6 +67,8 @@
 		98E8D5571A068EA000D2ADC9 /* Minigames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E8D5561A068EA000D2ADC9 /* Minigames.swift */; };
 		98E8D5591A06933300D2ADC9 /* dog.png in Resources */ = {isa = PBXBuildFile; fileRef = 98E8D5581A06933300D2ADC9 /* dog.png */; };
 		98E8D55B1A06995000D2ADC9 /* SelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E8D55A1A06995000D2ADC9 /* SelectionViewController.swift */; };
+		98E8D55D1A069FF200D2ADC9 /* ShooterScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E8D55C1A069FF200D2ADC9 /* ShooterScene.swift */; };
+		98E8D55F1A06AF1700D2ADC9 /* background_afternoonsky.png in Resources */ = {isa = PBXBuildFile; fileRef = 98E8D55E1A06AF1700D2ADC9 /* background_afternoonsky.png */; };
 		98EF19E71A01A3F9001D9571 /* SpaceHero.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98EF19E61A01A3F9001D9571 /* SpaceHero.swift */; };
 		98EF19EB1A01A9D9001D9571 /* SpaceScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98EF19EA1A01A9D9001D9571 /* SpaceScene.swift */; };
 /* End PBXBuildFile section */
@@ -146,6 +148,8 @@
 		98E8D5561A068EA000D2ADC9 /* Minigames.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Minigames.swift; sourceTree = "<group>"; };
 		98E8D5581A06933300D2ADC9 /* dog.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dog.png; sourceTree = "<group>"; };
 		98E8D55A1A06995000D2ADC9 /* SelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectionViewController.swift; sourceTree = "<group>"; };
+		98E8D55C1A069FF200D2ADC9 /* ShooterScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShooterScene.swift; sourceTree = "<group>"; };
+		98E8D55E1A06AF1700D2ADC9 /* background_afternoonsky.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background_afternoonsky.png; sourceTree = "<group>"; };
 		98EF19E61A01A3F9001D9571 /* SpaceHero.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpaceHero.swift; sourceTree = "<group>"; };
 		98EF19EA1A01A9D9001D9571 /* SpaceScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpaceScene.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -175,6 +179,7 @@
 				98EF19EA1A01A9D9001D9571 /* SpaceScene.swift */,
 				98E27DCB1A03025700BF9DBF /* RunningScene.swift */,
 				131A78181A054F5100A73FD9 /* TransitionScene.swift */,
+				98E8D55C1A069FF200D2ADC9 /* ShooterScene.swift */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -193,6 +198,7 @@
 		13FE500519FBFEE700569200 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				98E8D55E1A06AF1700D2ADC9 /* background_afternoonsky.png */,
 				13ECE19219FC1253008052A3 /* background_city01.png */,
 				13ECE19319FC1253008052A3 /* background_morningsky.png */,
 				13ECE19419FC1253008052A3 /* background_nightsky.png */,
@@ -471,6 +477,7 @@
 				13ECE19719FC1253008052A3 /* background_city01.png in Resources */,
 				988BC99A19FD070C007EA9B8 /* SaveMe.aifc in Resources */,
 				9861406419EB2B7000AF733A /* LaunchScreen.xib in Resources */,
+				98E8D55F1A06AF1700D2ADC9 /* background_afternoonsky.png in Resources */,
 				988BC99B19FD070C007EA9B8 /* ScoreTime.aifc in Resources */,
 				13ECE19A19FC1253008052A3 /* title_screen.png in Resources */,
 				13ECE1B519FC12BD008052A3 /* exit.png in Resources */,
@@ -510,6 +517,7 @@
 				9861405A19EB2B7000AF733A /* AppDelegate.swift in Sources */,
 				988BC99E19FD0AC9007EA9B8 /* FlappyHero.swift in Sources */,
 				98D450EB1A0455A70034A539 /* AudioManager.swift in Sources */,
+				98E8D55D1A069FF200D2ADC9 /* ShooterScene.swift in Sources */,
 				131A78191A054F5100A73FD9 /* TransitionScene.swift in Sources */,
 				98D450ED1A045ACF0034A539 /* OptionsViewController.swift in Sources */,
 				98B1EB8319FC548A00717B81 /* GameViewController.swift in Sources */,

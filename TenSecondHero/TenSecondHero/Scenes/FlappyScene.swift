@@ -62,6 +62,7 @@ public class FlappyScene : BaseScene {
         if( contact.bodyA == hero.physicsBody || contact.bodyB == hero.physicsBody ) {
             hero.die()
             background.stop()
+            endLevel()
         }
     }
     
@@ -82,7 +83,7 @@ public class FlappyScene : BaseScene {
                 SKAction.moveToX(80.0, duration: 5.0),
                 SKAction.runBlock({
                     if ( self.hero.currentState == FlappyState.Playing ) {
-                        self.rootParent.addScore(1)
+                        self.rootParent?.addScore(1)
                     }
                 }),
                 SKAction.moveToX(-30, duration: 1.0),
