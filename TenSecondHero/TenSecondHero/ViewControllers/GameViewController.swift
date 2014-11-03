@@ -13,6 +13,7 @@ class GameViewController: UIViewController, GameDelegate {
     var scene : GameScene?
     var index : Int = -1
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -33,11 +34,20 @@ class GameViewController: UIViewController, GameDelegate {
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewDidDisappear(animated : Bool ) {
+        let currentView : SKView = self.view as SKView
+        
+        scene?.gameDelegate = nil
+        scene = nil
+        currentView.presentScene(nil)
+    }
+    
     func gameOver(gameType : Int, score: Int) {
         HighScores().setHighscoreForGame(gameType, score: score)
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        /*let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let viewController = storyboard.instantiateViewControllerWithIdentifier("TitleViewController") as TitleViewController
-        navigationController?.pushViewController(viewController, animated: true)
+        navigationController?.pushViewController(viewController, animated: true)*/
+        navigationController?.popViewControllerAnimated(true)
     }
     
 }

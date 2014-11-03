@@ -75,6 +75,9 @@ class GameScene : SKScene, SKPhysicsContactDelegate {
     
     override init(size : CGSize) {
         super.init(size: size)
+        
+        let time = UInt32(NSDate().timeIntervalSinceReferenceDate)
+        srand(time)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -180,6 +183,8 @@ class GameScene : SKScene, SKPhysicsContactDelegate {
     func loadNext(){
         
         currentScene.removeFromParent()
+        currentScene.removeAllChildren()
+        currentScene.removeAllActions()
         cleanGUI()
         
         switch(nextLevel) {

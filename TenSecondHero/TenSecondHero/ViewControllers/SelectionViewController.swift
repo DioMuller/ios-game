@@ -26,6 +26,11 @@ class SelectionViewController : UITableViewController {
     
     override func viewWillAppear(animated : Bool) {
         self.tableView.reloadData()
+        
+        AudioManager.playMusic("Credits")
+        
+        self.navigationController?.navigationBarHidden = false
+        self.navigationController?.interactivePopGestureRecognizer.enabled = false
     }
     
     override func didReceiveMemoryWarning() {
