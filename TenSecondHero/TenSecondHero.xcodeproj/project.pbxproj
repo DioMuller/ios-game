@@ -59,6 +59,8 @@
 		98E27DCC1A03025700BF9DBF /* RunningScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E27DCB1A03025700BF9DBF /* RunningScene.swift */; };
 		98E7CACE1A06F481003362B8 /* GameOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E7CACD1A06F481003362B8 /* GameOptions.swift */; };
 		98E7CAD01A06F804003362B8 /* HighScores.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E7CACF1A06F804003362B8 /* HighScores.swift */; };
+		98E7CAD81A0701C9003362B8 /* Smoke.sks in Resources */ = {isa = PBXBuildFile; fileRef = 98E7CAD61A0701C9003362B8 /* Smoke.sks */; };
+		98E7CAD91A0701C9003362B8 /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = 98E7CAD71A0701C9003362B8 /* spark.png */; };
 		98E8D54A1A065E5700D2ADC9 /* spacehero_thumb.png in Resources */ = {isa = PBXBuildFile; fileRef = 98E8D5481A065E5700D2ADC9 /* spacehero_thumb.png */; };
 		98E8D54B1A065E5700D2ADC9 /* spacehero.png in Resources */ = {isa = PBXBuildFile; fileRef = 98E8D5491A065E5700D2ADC9 /* spacehero.png */; };
 		98E8D54D1A06601A00D2ADC9 /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E8D54C1A06601A00D2ADC9 /* Animation.swift */; };
@@ -142,6 +144,8 @@
 		98E27DCB1A03025700BF9DBF /* RunningScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RunningScene.swift; sourceTree = "<group>"; };
 		98E7CACD1A06F481003362B8 /* GameOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOptions.swift; sourceTree = "<group>"; };
 		98E7CACF1A06F804003362B8 /* HighScores.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HighScores.swift; sourceTree = "<group>"; };
+		98E7CAD61A0701C9003362B8 /* Smoke.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = Smoke.sks; path = ../../../../../Smoke.sks; sourceTree = "<group>"; };
+		98E7CAD71A0701C9003362B8 /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = spark.png; path = ../../../../../spark.png; sourceTree = "<group>"; };
 		98E8D5481A065E5700D2ADC9 /* spacehero_thumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spacehero_thumb.png; sourceTree = "<group>"; };
 		98E8D5491A065E5700D2ADC9 /* spacehero.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spacehero.png; sourceTree = "<group>"; };
 		98E8D54C1A06601A00D2ADC9 /* Animation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
@@ -191,6 +195,7 @@
 		13FE500419FBFEDC00569200 /* Content */ = {
 			isa = PBXGroup;
 			children = (
+				98E7CAD11A06FDE2003362B8 /* Particles */,
 				13FE500519FBFEE700569200 /* Images */,
 				13FE500819FBFF3800569200 /* Music */,
 				13FE500719FBFF2D00569200 /* Sound */,
@@ -202,6 +207,7 @@
 		13FE500519FBFEE700569200 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				98E7CAD71A0701C9003362B8 /* spark.png */,
 				98E8D55E1A06AF1700D2ADC9 /* background_afternoonsky.png */,
 				13ECE19219FC1253008052A3 /* background_city01.png */,
 				13ECE19319FC1253008052A3 /* background_morningsky.png */,
@@ -380,6 +386,14 @@
 			path = Persistence;
 			sourceTree = "<group>";
 		};
+		98E7CAD11A06FDE2003362B8 /* Particles */ = {
+			isa = PBXGroup;
+			children = (
+				98E7CAD61A0701C9003362B8 /* Smoke.sks */,
+			);
+			path = Particles;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -470,6 +484,7 @@
 				13ECE1B319FC12BD008052A3 /* cage.png in Resources */,
 				13ECE1BA19FC12BD008052A3 /* hero_failure.png in Resources */,
 				13ECE1B919FC12BD008052A3 /* grandmacitizen01.png in Resources */,
+				98E7CAD91A0701C9003362B8 /* spark.png in Resources */,
 				98E8D5531A068B3E00D2ADC9 /* runningirl.png in Resources */,
 				13ECE1B719FC12BD008052A3 /* girlcitizen01.png in Resources */,
 				988BC99919FD070C007EA9B8 /* PressStart.aifc in Resources */,
@@ -479,6 +494,7 @@
 				13ECE1B019FC12BD008052A3 /* bomb.png in Resources */,
 				13ECE1BC19FC12BD008052A3 /* piu01.png in Resources */,
 				13ECE1AF19FC12BD008052A3 /* flyinghero.png in Resources */,
+				98E7CAD81A0701C9003362B8 /* Smoke.sks in Resources */,
 				13ECE1BD19FC12BD008052A3 /* piu02.png in Resources */,
 				988BC9A419FDB465007EA9B8 /* pickup.caf in Resources */,
 				98E8D5551A068E5300D2ADC9 /* runningirl_thumb.png in Resources */,

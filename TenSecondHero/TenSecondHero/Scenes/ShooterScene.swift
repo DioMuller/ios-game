@@ -11,8 +11,10 @@ import SpriteKit
 public class ShooterScene : BaseScene {
     var ground : SKSpriteNode = SKSpriteNode()
     var enemyTextures : [SKTexture] = []
+    var background : SKSpriteNode = SKSpriteNode(imageNamed: "background_afternoonsky.png")
     
     var size : CGSize = CGSize()
+    var levelEnded : Bool = false
     
     override init() {
         super.init()
@@ -33,6 +35,10 @@ public class ShooterScene : BaseScene {
         
         enemyTextures = Animation.generateTextures("bomb.png", xOffset: 0.5, yOffset: 1.0)
         
+        background.size = size
+        background.position = CGPoint(x: size.width / 2, y: size.height / 2)
+        addChild(background)
+        
         self.runAction(SKAction.repeatActionForever(SKAction.sequence([
             SKAction.runBlock(createObstacle),
             SKAction.waitForDuration(1.0)
@@ -46,9 +52,17 @@ public class ShooterScene : BaseScene {
             var objects : [AnyObject] = self.nodesAtPoint(location)
             
             for object : AnyObject in objects {
-                object.removeAllActions()
-                object.removeFromParent()
-                self.rootParent?.addScore(1)
+                
+                if( object as? SKSpriteNode != background ) {
+                
+                    let smoke : SKEmitterNode = SKEmitterNode(fileNamed: "Smoke.sks")
+                    smoke.position = location
+                    addChild(smoke)
+                
+                    object.removeAllActions()
+                    object.removeFromParent()
+                    self.rootParent?.addScore(1)
+                }
             }
         }
     }
@@ -92,7 +106,10 @@ public class ShooterScene : BaseScene {
                 SKAction.fadeOutWithDuration(0.5),
                 SKAction.runBlock({
                     newObstacle.removeFromParent()
-                    AudioManager.playSound("explosion")
+                    if( !self.levelEnded ) {
+                        AudioManager.playSound("explosion")
+                        self.levelEnded = true
+                    }
                     self.endLevel()
                 })
             ]))
