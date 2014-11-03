@@ -77,13 +77,13 @@ struct Minigames {
     static func getInfo(type : Int ) -> MinigameInfo {
         switch(type) {
         case Flap:
-            return MinigameInfo(title: "Flap!", hero: HeroInfo(name: "Capeman", image: "flyinghero.png"))
+            return MinigameInfo(title: "Flap!", hero: HeroInfo(name: "Towelman", image: "flyinghero_thumb.png"))
         case Space:
             return MinigameInfo(title: "Explore Space!", hero: HeroInfo(name: "Captain Space", image: "spacehero_thumb.png"))
         case Run:
-            return MinigameInfo(title: "Run!", hero: HeroInfo(name: "Runningirl", image: "runningirl_thumb.png"))
+            return MinigameInfo(title: "Run!", hero: HeroInfo(name: "RunninGirl", image: "runningirl_thumb.png"))
         case Shoot:
-            return MinigameInfo(title: "Shoot!", hero: HeroInfo(name: "El Bandido", image: "thief01.png"))
+            return MinigameInfo(title: "Shoot!", hero: HeroInfo(name: "El Vaquero", image: "shooter_thumb.png"))
         default:
             return error
         }

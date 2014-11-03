@@ -13,11 +13,17 @@ enum FlappyState {
 }
 
 class FlappyHero : SKNode {
-    var sprite : SKSpriteNode = SKSpriteNode(imageNamed: "flyinghero.png")
+    var sprite : SKSpriteNode = SKSpriteNode()
     var currentState : FlappyState = .AwaitingStart
     
     override init() {
         super.init()
+        
+        var animations : [SKTexture] = Animation.generateTextures("flyinghero.png", xOffset: 1.0, yOffset: 0.5)
+        sprite = SKSpriteNode(texture: animations[0])
+        sprite.runAction(SKAction.repeatActionForever(
+            SKAction.animateWithTextures(animations, timePerFrame: 0.2)
+            ))
         
         addChild(sprite)
     }
