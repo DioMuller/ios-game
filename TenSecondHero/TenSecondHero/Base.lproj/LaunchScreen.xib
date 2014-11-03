@@ -10,15 +10,18 @@
             <rect key="frame" x="0.0" y="0.0" width="626" height="473"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" fixedFrame="YES" image="title.png" translatesAutoresizingMaskIntoConstraints="NO" id="lYj-uf-Srm">
+                    <rect key="frame" x="0.0" y="0.0" width="841" height="572"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="HlW-fJ-R3f">
+                    <rect key="frame" x="193" y="74" width="240" height="128"/>
+                </imageView>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  Copyright (c) 2014 Diogo Muller. All rights reserved." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="8ie-xW-0ye">
                     <rect key="frame" x="20" y="432" width="587" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="title_screen.png" translatesAutoresizingMaskIntoConstraints="NO" id="lYj-uf-Srm">
-                    <rect key="frame" x="-100" y="-45" width="841" height="572"/>
-                </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
@@ -32,6 +35,7 @@
         </view>
     </objects>
     <resources>
-        <image name="title_screen.png" width="640" height="480"/>
+        <image name="Logo.png" width="202" height="86"/>
+        <image name="title.png" width="640" height="480"/>
     </resources>
 </document>
