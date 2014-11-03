@@ -82,6 +82,8 @@
 		98F005781A081A8900CECA77 /* worker_thumb.png in Resources */ = {isa = PBXBuildFile; fileRef = 98F005731A081A8900CECA77 /* worker_thumb.png */; };
 		98F005791A081A8900CECA77 /* worker.png in Resources */ = {isa = PBXBuildFile; fileRef = 98F005741A081A8900CECA77 /* worker.png */; };
 		98F0057B1A082D6C00CECA77 /* HighScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F0057A1A082D6C00CECA77 /* HighScoreViewController.swift */; };
+		98F0057D1A0838BC00CECA77 /* ForkliftHero.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F0057C1A0838BC00CECA77 /* ForkliftHero.swift */; };
+		98F0057F1A0839AA00CECA77 /* DrivingScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F0057E1A0839AA00CECA77 /* DrivingScene.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -174,6 +176,8 @@
 		98F005731A081A8900CECA77 /* worker_thumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = worker_thumb.png; sourceTree = "<group>"; };
 		98F005741A081A8900CECA77 /* worker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = worker.png; sourceTree = "<group>"; };
 		98F0057A1A082D6C00CECA77 /* HighScoreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HighScoreViewController.swift; sourceTree = "<group>"; };
+		98F0057C1A0838BC00CECA77 /* ForkliftHero.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForkliftHero.swift; sourceTree = "<group>"; };
+		98F0057E1A0839AA00CECA77 /* DrivingScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrivingScene.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -202,6 +206,7 @@
 				98E27DCB1A03025700BF9DBF /* RunningScene.swift */,
 				131A78181A054F5100A73FD9 /* TransitionScene.swift */,
 				98E8D55C1A069FF200D2ADC9 /* ShooterScene.swift */,
+				98F0057E1A0839AA00CECA77 /* DrivingScene.swift */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -373,6 +378,7 @@
 				988BC99D19FD0AC9007EA9B8 /* FlappyHero.swift */,
 				98EF19E61A01A3F9001D9571 /* SpaceHero.swift */,
 				98E27DC91A03001B00BF9DBF /* RunningHero.swift */,
+				98F0057C1A0838BC00CECA77 /* ForkliftHero.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -568,6 +574,7 @@
 				98E8D54D1A06601A00D2ADC9 /* Animation.swift in Sources */,
 				13ECE18E19FC0BAD008052A3 /* GameScene.swift in Sources */,
 				9861405C19EB2B7000AF733A /* TitleViewController.swift in Sources */,
+				98F0057F1A0839AA00CECA77 /* DrivingScene.swift in Sources */,
 				98E27DCA1A03001B00BF9DBF /* RunningHero.swift in Sources */,
 				98E27DCC1A03025700BF9DBF /* RunningScene.swift in Sources */,
 				98B1EB7F19FC4B3700717B81 /* FlappyScene.swift in Sources */,
@@ -575,6 +582,7 @@
 				988BC99E19FD0AC9007EA9B8 /* FlappyHero.swift in Sources */,
 				98D450EB1A0455A70034A539 /* AudioManager.swift in Sources */,
 				98E8D55D1A069FF200D2ADC9 /* ShooterScene.swift in Sources */,
+				98F0057D1A0838BC00CECA77 /* ForkliftHero.swift in Sources */,
 				131A78191A054F5100A73FD9 /* TransitionScene.swift in Sources */,
 				98D450ED1A045ACF0034A539 /* OptionsViewController.swift in Sources */,
 				98B1EB8319FC548A00717B81 /* GameViewController.swift in Sources */,

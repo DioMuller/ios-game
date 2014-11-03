@@ -1,28 +1,28 @@
 //
-//  SpaceHero.swift
+//  ForkliftHero.swift
 //  TenSecondHero
 //
-//  Created by Diogo Muller on 10/29/14.
+//  Created by Diogo Muller on 11/3/14.
 //  Copyright (c) 2014 Diogo Muller. All rights reserved.
 //
 
 import SpriteKit
 
-enum ShootingState {
+enum DrivingState {
     case AwaitingStart, Idle, Moving, Dead
 }
 
-class SpaceHero : SKNode {
+class ForkliftHero : SKNode {
     var sprite : SKSpriteNode = SKSpriteNode()
-    var currentState : ShootingState = .AwaitingStart
+    var currentState : DrivingState = .AwaitingStart
     
     override init() {
         super.init()
         
-        var animations : [SKTexture] = Animation.generateTextures("spacehero.png", xOffset: 1.0, yOffset: 0.5)
+        var animations : [SKTexture] = Animation.generateTextures("worker.png", xOffset: 0.5, yOffset: 1.0)
         sprite = SKSpriteNode(texture: animations[0])
         sprite.runAction(SKAction.repeatActionForever(
-                SKAction.animateWithTextures(animations, timePerFrame: 0.2)
+            SKAction.animateWithTextures(animations, timePerFrame: 0.2)
             ))
         
         addChild(sprite)
@@ -45,21 +45,14 @@ class SpaceHero : SKNode {
         }
         
         if( currentState == .Idle ) {
-     
+            
             for touch : AnyObject in touches {
                 var location = touch.locationInNode(self)
-            
+                
                 if(abs(Int(location.y - self.position.y)) < 250) {
                     currentState = .Moving
                 }
             }
-            
-            self.runAction(SKAction.repeatActionForever(SKAction.sequence([
-                    SKAction.runBlock({
-                        self.createShoot()
-                    }),
-                    SKAction.waitForDuration(1.0)
-                ])))
         }
     }
     
@@ -71,7 +64,7 @@ class SpaceHero : SKNode {
             
             for touch : AnyObject in touches {
                 var location = touch.locationInNode(parent)
-
+                
                 var distance : Float = Float(abs(Int(location.y - self.position.y)))
                 
                 if( distance < minDist ) {
@@ -83,7 +76,6 @@ class SpaceHero : SKNode {
             
             if( !changed ) {
                 currentState = .Idle
-                removeAllActions()
             } else {
                 self.position.y = chosenY
             }
@@ -103,12 +95,6 @@ class SpaceHero : SKNode {
             removeAllActions()
         }
     }
-    
-    func createShoot() {
-        (parent as SpaceScene).createShoot()
-        AudioManager.playSound("explosion")
-    }
-    
     
     func die() {
         self.currentState = .Dead

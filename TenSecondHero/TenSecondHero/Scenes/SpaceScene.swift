@@ -1,5 +1,5 @@
 //
-//  ShootingScene.swift
+//  SpaceScene.swift
 //  TenSecondHero
 //
 //  Created by Diogo Muller on 10/29/14.
@@ -11,7 +11,6 @@ import SpriteKit
 public class SpaceScene : BaseScene {
     var hero : SpaceHero = SpaceHero()
     var background : ParallaxBackground = ParallaxBackground()
-    var ground : SKSpriteNode = SKSpriteNode()
     
     var enemyTextures : [SKTexture] = []
     
@@ -43,7 +42,7 @@ public class SpaceScene : BaseScene {
         
         self.runAction(SKAction.repeatActionForever(SKAction.sequence([
             SKAction.runBlock(createEnemy),
-            SKAction.waitForDuration(3.5)
+            SKAction.waitForDuration(1.5)
             ])))
     }
     

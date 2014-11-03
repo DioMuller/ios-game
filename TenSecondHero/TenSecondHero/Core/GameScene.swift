@@ -194,6 +194,10 @@ class GameScene : SKScene, SKPhysicsContactDelegate {
                 break
             case Minigames.Shoot:
                 currentScene = ShooterScene()
+                break
+            case Minigames.Drive:
+                currentScene = DrivingScene()
+                break
             default:
                 chooseNext()
                 loadNext()

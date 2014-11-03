@@ -37,8 +37,9 @@ struct Minigames {
     static var Space : Int = 1
     static var Run : Int = 2
     static var Shoot : Int = 3
+    static var Drive : Int = 4
     
-    static var Count = 4
+    static var Count = 5
     
     static var initialized : Bool = false
     static var internalList : [MinigameInfo] = []
@@ -84,6 +85,8 @@ struct Minigames {
             return MinigameInfo(title: "Run!", hero: HeroInfo(name: "RunninGirl", image: "runningirl_thumb.png"))
         case Shoot:
             return MinigameInfo(title: "Shoot!", hero: HeroInfo(name: "El Vaquero", image: "shooter_thumb.png"))
+        case Drive:
+            return MinigameInfo(title: "Avoid the Civilians!", hero: HeroInfo(name: "Forklift Driver", image: "worker_thumb.png"))
         default:
             return error
         }
