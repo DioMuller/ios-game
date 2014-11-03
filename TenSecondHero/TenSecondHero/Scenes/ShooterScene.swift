@@ -53,7 +53,7 @@ public class ShooterScene : BaseScene {
             
             for object : AnyObject in objects {
                 
-                if( object as? SKSpriteNode != background ) {
+                if( (object as? SKSpriteNode)?.name == "Bomb" ) {
                 
                     let smoke : SKEmitterNode = SKEmitterNode(fileNamed: "Smoke.sks")
                     smoke.position = location
@@ -94,6 +94,8 @@ public class ShooterScene : BaseScene {
         newObstacle.physicsBody?.categoryBitMask = Collisions.Obstacle
         newObstacle.physicsBody?.affectedByGravity = true
         newObstacle.physicsBody?.collisionBitMask = Collisions.None
+        
+        newObstacle.name = "Bomb"
         
         if( distanceFromCenter != 0 ) {
             newObstacle.physicsBody?.velocity = CGVectorMake(-distanceFromCenter / abs(distanceFromCenter) * 200, 800)
