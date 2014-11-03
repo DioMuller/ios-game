@@ -68,7 +68,7 @@ class HighScores {
     func setHighscoreForGame(game : Int, score : Int) {
         if( game == Minigames.MainGame ) {
             mainGameHighscore = score
-        } else if( score > mainGameHighscore ) {
+        } else if( score > getHighscoreForGame(game) ) {
             userDefaults.setValue(score, forKey: "highscoreGame" + String(game))
             userDefaults.synchronize()
         }

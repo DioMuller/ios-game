@@ -29,6 +29,7 @@ class GameScene : SKScene, SKPhysicsContactDelegate {
     
     // Game State Helpers
     var score : Int = 0
+    var lastScore : Int = 0
     var highscore : Int = 0
     var nextLevel : Int = -1
     private var countdownTimer : Int = 0
@@ -205,6 +206,10 @@ class GameScene : SKScene, SKPhysicsContactDelegate {
     }
     
     func chooseNext() {
+        var levelScore = score - lastScore
+        lastScore = score
+        HighScores().setHighscoreForGame(nextLevel, score: levelScore)
+    
         var x : Int = nextLevel
         
         // Guarantees no repeats
