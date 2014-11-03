@@ -81,6 +81,7 @@
 		98F005771A081A8900CECA77 /* shooter_thumb.png in Resources */ = {isa = PBXBuildFile; fileRef = 98F005721A081A8900CECA77 /* shooter_thumb.png */; };
 		98F005781A081A8900CECA77 /* worker_thumb.png in Resources */ = {isa = PBXBuildFile; fileRef = 98F005731A081A8900CECA77 /* worker_thumb.png */; };
 		98F005791A081A8900CECA77 /* worker.png in Resources */ = {isa = PBXBuildFile; fileRef = 98F005741A081A8900CECA77 /* worker.png */; };
+		98F0057B1A082D6C00CECA77 /* HighScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F0057A1A082D6C00CECA77 /* HighScoreViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -172,6 +173,7 @@
 		98F005721A081A8900CECA77 /* shooter_thumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shooter_thumb.png; sourceTree = "<group>"; };
 		98F005731A081A8900CECA77 /* worker_thumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = worker_thumb.png; sourceTree = "<group>"; };
 		98F005741A081A8900CECA77 /* worker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = worker.png; sourceTree = "<group>"; };
+		98F0057A1A082D6C00CECA77 /* HighScoreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HighScoreViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -360,6 +362,7 @@
 				98B1EB8219FC548A00717B81 /* GameViewController.swift */,
 				98D450EC1A045ACF0034A539 /* OptionsViewController.swift */,
 				98E8D55A1A06995000D2ADC9 /* SelectionViewController.swift */,
+				98F0057A1A082D6C00CECA77 /* HighScoreViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -581,6 +584,7 @@
 				98EF19EB1A01A9D9001D9571 /* SpaceScene.swift in Sources */,
 				98EF19E71A01A3F9001D9571 /* SpaceHero.swift in Sources */,
 				98E8D5571A068EA000D2ADC9 /* Minigames.swift in Sources */,
+				98F0057B1A082D6C00CECA77 /* HighScoreViewController.swift in Sources */,
 				13ECE19119FC0E19008052A3 /* BaseScene.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

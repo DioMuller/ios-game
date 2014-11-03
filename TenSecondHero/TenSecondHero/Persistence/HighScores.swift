@@ -8,8 +8,34 @@
 
 import Foundation
 
+struct HighscoreInfo {
+    var game : String
+    var score : Int
+    
+    init( game : String, score : Int ){
+        self.game = game
+        self.score = score
+    }
+}
+
 class HighScores {
     private var userDefaults : NSUserDefaults = NSUserDefaults.standardUserDefaults()
+    
+    var list : [HighscoreInfo] {
+        get {
+            var scores : [HighscoreInfo] = []
+            var i : Int = 0
+        
+            scores.append(HighscoreInfo(game: "Main Game", score: mainGameHighscore))
+        
+            for( i = 0; i < Minigames.Count; i++ ) {
+                var info = Minigames.getInfo(i)
+                scores.append(HighscoreInfo(game: info.title, score: getHighscoreForGame(i)))
+            }
+            
+            return scores
+        }
+    }
     
     var mainGameHighscore : Int {
         get {
