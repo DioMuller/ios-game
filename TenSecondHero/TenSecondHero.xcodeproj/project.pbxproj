@@ -170,7 +170,7 @@
 		98EF19E61A01A3F9001D9571 /* SpaceHero.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpaceHero.swift; sourceTree = "<group>"; };
 		98EF19EA1A01A9D9001D9571 /* SpaceScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpaceScene.swift; sourceTree = "<group>"; };
 		98F0056A1A08193200CECA77 /* Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Logo.png; sourceTree = "<group>"; };
-		98F0056C1A08194100CECA77 /* Smoke.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = Smoke.sks; path = Content/Particles/Smoke.sks; sourceTree = SOURCE_ROOT; };
+		98F0056C1A08194100CECA77 /* Smoke.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Smoke.sks; sourceTree = "<group>"; };
 		98F005701A081A8900CECA77 /* flyinghero_thumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = flyinghero_thumb.png; sourceTree = "<group>"; };
 		98F005711A081A8900CECA77 /* flyingvillain.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = flyingvillain.png; sourceTree = "<group>"; };
 		98F005721A081A8900CECA77 /* shooter_thumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shooter_thumb.png; sourceTree = "<group>"; };
