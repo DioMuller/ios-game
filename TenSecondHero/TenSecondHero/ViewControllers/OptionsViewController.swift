@@ -20,8 +20,8 @@ class OptionsViewController : UIViewController {
     
     @IBAction func soundVolumeChanged(sender: AnyObject) {
         AudioManager.soundVolume = sender.value
+        AudioManager.playSound("explosion")
     }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()

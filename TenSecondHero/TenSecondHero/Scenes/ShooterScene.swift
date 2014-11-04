@@ -57,7 +57,12 @@ public class ShooterScene : BaseScene {
                 
                     let smoke : SKEmitterNode = SKEmitterNode(fileNamed: "Smoke.sks")
                     smoke.position = location
+                    smoke.runAction(SKAction.sequence([
+                        SKAction.waitForDuration(1.0),
+                        SKAction.runBlock({smoke.removeFromParent()})
+                    ]))
                     addChild(smoke)
+                    AudioManager.playSound("pickup")
                 
                     object.removeAllActions()
                     object.removeFromParent()

@@ -29,7 +29,7 @@ public class DrivingScene : BaseScene {
         
         size = self.scene!.size
         
-        background = ParallaxBackground(imageNamed: "background_nightsky.png", size: self.scene!.size, velocity: 0.1)
+        background = ParallaxBackground(imageNamed: "background_cement.png", size: self.scene!.size, velocity: 0.1)
         addChild(background)
         
         hero.position = CGPoint(x: 100, y: 100)
@@ -62,6 +62,15 @@ public class DrivingScene : BaseScene {
             if( contact.bodyA.categoryBitMask != Collisions.Player ) { contact.bodyA.node?.removeFromParent() }
             if( contact.bodyB.categoryBitMask != Collisions.Player ) { contact.bodyB.node?.removeFromParent() }
             
+            let blood : SKEmitterNode = SKEmitterNode(fileNamed: "Blood.sks")
+            blood.position = contact.bodyA.node!.position
+            blood.runAction(SKAction.sequence([
+                SKAction.waitForDuration(1.0),
+                SKAction.runBlock({blood.removeFromParent()})
+                ]))
+            addChild(blood)
+            
+            AudioManager.playSound("explosion")
             endLevel()
         }
     }
@@ -91,7 +100,7 @@ public class DrivingScene : BaseScene {
         newObstacle.physicsBody = SKPhysicsBody(rectangleOfSize: newObstacle.size)
         newObstacle.physicsBody?.categoryBitMask = Collisions.Obstacle
         newObstacle.physicsBody?.affectedByGravity = false
-        newObstacle.physicsBody?.collisionBitMask = Collisions.All
+        newObstacle.physicsBody?.collisionBitMask = Collisions.None
         
         addChild(newObstacle)
     }

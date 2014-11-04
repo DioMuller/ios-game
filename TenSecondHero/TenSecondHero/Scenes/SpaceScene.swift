@@ -66,6 +66,15 @@ public class SpaceScene : BaseScene {
         contact.bodyA.node?.removeFromParent()
         contact.bodyB.node?.removeFromParent()
         
+        let blood : SKEmitterNode = SKEmitterNode(fileNamed: "Blood.sks")
+        blood.position = contact.bodyA.node!.position
+        blood.runAction(SKAction.sequence([
+            SKAction.waitForDuration(1.0),
+            SKAction.runBlock({blood.removeFromParent()})
+            ]))
+        addChild(blood)
+        AudioManager.playSound("explosion")
+        
         if( contact.bodyA.categoryBitMask == Collisions.Player || contact.bodyB.categoryBitMask == Collisions.Player ) {
             endLevel()
         } else {

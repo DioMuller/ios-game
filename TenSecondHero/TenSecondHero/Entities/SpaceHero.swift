@@ -106,7 +106,7 @@ class SpaceHero : SKNode {
     
     func createShoot() {
         (parent as SpaceScene).createShoot()
-        AudioManager.playSound("explosion")
+        AudioManager.playSound("drop")
     }
     
     
